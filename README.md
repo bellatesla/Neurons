@@ -23,7 +23,13 @@ This project aims to simulate the behavior of neurons using a real-time 3D envir
 - **Event-Driven Design**: Modular approach using events for clean and maintainable code.
 - **Particle System Visualization**: Visualize neuron activity and spike paths using particles.
 
-![Neuron Activity Visualization](path/to/your/second_image.png)
+**Neuron Settings**
+
+<img src="images/neuron_settings1.png" alt="Neuron Settings" width="400"/>
+
+**Effect Settings**
+
+<img src="images/neuron_settings2.png" alt="Neuron Settings" width="400"/>
 
 ## Installation
 

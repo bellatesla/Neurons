@@ -16,15 +16,7 @@ public class SaveableUI : MonoBehaviour, ISaveable
     private int GetID() => gameObject.GetInstanceID();
 
     public void SaveState(ref SaveSystem.SaveData savedData)
-    {
-        // If we are disabled don't add any save data
-        if (!gameObject.activeInHierarchy)
-        {
-            print($"GameObject {gameObject.name} is not active. Skipping save for this object.");
-            return;
-        }
-
-
+    {        
         UISaveData newData = new UISaveData
         {
             id = GetID(),
@@ -39,12 +31,6 @@ public class SaveableUI : MonoBehaviour, ISaveable
 
     public void LoadState(SaveSystem.SaveData state, int index)
     {
-        if (!gameObject.activeInHierarchy)
-        {
-            print($"GameObject {gameObject.name} is not active. Skipping load for this object.");
-            return;
-        }
-
         UISaveData data = state.uiData[index];
         
         // Ensure we're loading the correct data

@@ -23,13 +23,7 @@ public class SaveableNeuron : MonoBehaviour, ISaveable
         return gameObject.GetInstanceID();
     }       
     public void SaveState(ref SaveSystem.SaveData savedData)
-    {
-        // handle when gameobject is inactive
-        if (!gameObject.activeInHierarchy)
-        {
-            print($"GameObject {gameObject.name} is not active. Skipping save for this object.");
-            return;
-        }
+    {        
         NeuronSaveData newData = new NeuronSaveData();
 
         newData.id = GetID();//no need to set this id        
@@ -66,12 +60,7 @@ public class SaveableNeuron : MonoBehaviour, ISaveable
         savedData.neuronData.Add(newData);       
     }
     public void LoadState(SaveSystem.SaveData state, int index)
-    {
-        if (!gameObject.activeInHierarchy)
-        {
-            print($"GameObject {gameObject.name} is not active. Skipping load for this object.");
-            return;
-        }
+    {        
         // get saved data entry     
         NeuronSaveData data = state.neuronData[index];        
         // Position

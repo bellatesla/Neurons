@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c5936bc39e23342bc0828550081583, type: 3}
+  m_Name: NeuronSettings Simple
+  m_EditorClassIdentifier: 
+  signalSpeed: 2
+  signalActivityDecayDuration: 10
+  signalActivityIncreaseAmount: 1.03
+  firingThresold: 0.98
+  connectionStrengthenRate: 0.1
+  connectionWeakenRate: 0
+  connectionStrengthMax: 1
+  connectionStrengthDefault: 0.5
+  removeConnectionThreshold: 0.05
+  polarizationTriggerDuration: 0.02
+  depolarizationTriggerDuration: 0.09
+  connectionAddRadius: 2.22
+  maxConnections: 0
+  positiveColor: {r: 0, g: 1, b: 0.10887098, a: 1}
+  negativeColor: {r: 0.99215686, g: 0.15247497, b: 0.0039215623, a: 1}
+  inactiveColor: {r: 0.034062464, g: 0.4811321, b: 0, a: 0.19215687}
+  inactiveColor2: {r: 0.6698113, g: 0, b: 0, a: 0.3529412}
+  emission: 1
+  signalColorActivityDecayDuration: 0.5
+  lineSettings:
+    lineDecayDuration: 0.3
+    lineWidthMin: 0.25
+    lineWidthMax: 0.76
+    lineStartWidth: 0.1
+    lineEndWidth: 0.1
+    lineWidthScale: 0.68
+    linePositiveColor: {r: 0.020914912, g: 0.8867924, b: 0.12774394, a: 0.72156864}
+    lineNegativeColor: {r: 1, g: 0.19297372, b: 0, a: 1}
+    lineInactiveColor: {r: 0.16037738, g: 0.14751694, b: 0.14751694, a: 0.65882355}
+    emission: 0
+    baseLineMaterial: {fileID: 2100000, guid: 5c853e35386ef3847bff64d622380e93, type: 2}
+  particleEffectsPrefab: {fileID: 5757198090248239405, guid: 53a0bbc05c79c14498ff8a4943e645e0, type: 3}
+  particleSize: 0.61
+  scaleStrength: 0.16

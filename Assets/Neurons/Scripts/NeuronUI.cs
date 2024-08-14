@@ -15,7 +15,7 @@ public class NeuronUI : MonoBehaviour
     public Button hoverInvertButton;
     public Button hoverRemoveButton;
     public RectTransform buttonsPanel;
-    //public Vector3 hudOffset;
+    
     public Vector3 lineOffset;
     public LineRenderer newConnectionLine;
     public RectTransform newLineConnectionIcon;

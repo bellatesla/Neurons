@@ -6,7 +6,6 @@ using UnityEngine;
 public class Neuron : MonoBehaviour
 {
     public NeuronType neuronType = NeuronType.Excitory;
-    public NeuronFunction functionType = NeuronFunction.FeedforwardInhibition;
     public List<Neuron> connections = new List<Neuron>();
     public Dictionary<Neuron, float> connectionStrengths = new Dictionary<Neuron, float>();
     public float voltage { get; private set; }//-1,1

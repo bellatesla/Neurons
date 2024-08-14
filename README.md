@@ -2,7 +2,7 @@
 
 Welcome to the Neuron Simulation Project! This project simulates the activity of neurons and their connections, visualizing the neuroplasticity and interactions between neurons in real-time using Unity.
 
-![Neuron Simulation](path/to/your/image.png)
+![Neuron Simulation](images/neuron_simulation.png)
 
 ## Table of Contents
 - [Introduction](#introduction)

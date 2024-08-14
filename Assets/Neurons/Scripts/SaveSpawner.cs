@@ -9,7 +9,7 @@ public class SaveSpawner : MonoBehaviour
     {
         if (data.prefabName =="Neuron")
         {
-            print($"Found prefabNamed {data.prefabName}..Spawning");
+            print($"Spawner creating new {data.prefabName} prefab");
             currentPrefab = neuronPrefab;
         }
 

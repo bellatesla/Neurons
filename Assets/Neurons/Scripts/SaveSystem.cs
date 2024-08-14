@@ -23,9 +23,8 @@ public class SaveSystem : MonoBehaviour
     [ContextMenu("Save Game State")]
     public void SaveGame()
     {
-        //var saveables = FindAllInterfaces<ISaveable>();
-        var saveables = FindObjectsOfType<MonoBehaviour>(true).OfType<ISaveable>().ToList();
-
+        var saveables = GetAllActiveSaveables();       
+        
         SaveData saveData = new SaveData();
         
         // Add save data from all saveables
@@ -35,7 +34,7 @@ public class SaveSystem : MonoBehaviour
         }
         
         string path = SaveToFile(saveData);
-        print($"Saved {saveables.Count} saveables to {path} ");
+        print($"Saved data for {saveables.Count} objects to {path} ");
     }
 
     private static string SaveToFile(SaveData saveData)
@@ -47,16 +46,31 @@ public class SaveSystem : MonoBehaviour
         return path;
     }
 
+    List<ISaveable> GetAllActiveSaveables()
+    {
+        var saveables = new List<ISaveable>();
+        //var saveables = FindObjectsOfType<MonoBehaviour>(true).OfType<ISaveable>().ToList();
 
+        // inactive saveables are not allowed
+        FindObjectsSortMode sortMode = FindObjectsSortMode.None;
+        var saveableNeurons = FindObjectsByType<SaveableNeuron>(sortMode);
+        saveables.AddRange(saveableNeurons);
+
+        var saveableUI = FindObjectsByType<SaveableUI>(sortMode);
+        saveables.AddRange(saveableUI);
+
+        return saveables;
+    }
+    
     [ContextMenu("Load Game State")]
     void Load()
     {
         IDToObjectDictionary = new Dictionary<int, GameObject>();
-        SaveData saveData = GetSavedData();
+        SaveData saveData = LoadFromFile();
         LoadGame(saveData);
     }
 
-    private static SaveData GetSavedData()
+    private static SaveData LoadFromFile()
     {
         string jsonData = System.IO.File.ReadAllText(Application.persistentDataPath + "/" + filename);
         SaveData saveData = JsonUtility.FromJson<SaveData>(jsonData);
@@ -66,8 +80,7 @@ public class SaveSystem : MonoBehaviour
     void LoadGame(SaveData saveData)
     {        
         //var saveables = FindAllInterfaces<ISaveable>();
-        var saveables = FindObjectsOfType<MonoBehaviour>(true).OfType<ISaveable>().ToList();
-        
+        var saveables = FindObjectsOfType<MonoBehaviour>(true).OfType<ISaveable>().ToList();       
         // Dispose or Pre-load state
         foreach (var saveable in saveables)
         {
@@ -103,12 +116,29 @@ public class SaveSystem : MonoBehaviour
     private static void LoadUI(List<ISaveable> saveables, SaveData saveData)
     {
         List<SaveableUI> uiElements = FindObjectsOfType<SaveableUI>().ToList();
-        print($"Found {uiElements.Count} ui remaining");
+
+        for (int i = uiElements.Count - 1; i >= 0; i--)
+        {
+            SaveableUI ui = uiElements[i];
+            // if inactive uiElement
+            if (!ui.gameObject.activeInHierarchy)
+            {
+                uiElements.RemoveAt(i);
+            }
+        }
+        print($"Found {uiElements.Count} Active UI elements");
         
+        //might cause error - on test when object are inactive/active mismatch 
+        // which might send mismatched data
         for (int i = 0; i < saveData.uiData.Count; i++)
         {
-            saveables.Add(uiElements[i]);
-            uiElements[i].LoadState(saveData, i);
+            // active elements
+            if (uiElements.Count > i)
+            {
+                saveables.Add(uiElements[i]);
+                uiElements[i].LoadState(saveData, i);
+            }
+            
         }
     }
 

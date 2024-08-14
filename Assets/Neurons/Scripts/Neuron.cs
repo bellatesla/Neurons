@@ -207,7 +207,7 @@ public class Neuron : MonoBehaviour
 
             if (randomNeuron != null && !connections.Contains(randomNeuron))
             {
-                print("Adding connection");
+                //print("Adding connection");
 
                 connections.Add(randomNeuron);
                 connectionStrengths[randomNeuron] = settings.connectionStrengthDefault;// Initialize connection strength

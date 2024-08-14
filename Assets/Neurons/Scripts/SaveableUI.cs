@@ -18,9 +18,10 @@ public class SaveableUI : MonoBehaviour, ISaveable
     public void SaveState(ref SaveSystem.SaveData savedData)
     {
         // If we are disabled don't add any save data
-        if (!enabled)
+        if (!gameObject.activeInHierarchy)
         {
-            return; 
+            print($"GameObject {gameObject.name} is not active. Skipping save for this object.");
+            return;
         }
 
 
@@ -38,8 +39,9 @@ public class SaveableUI : MonoBehaviour, ISaveable
 
     public void LoadState(SaveSystem.SaveData state, int index)
     {
-        if (!enabled)
+        if (!gameObject.activeInHierarchy)
         {
+            print($"GameObject {gameObject.name} is not active. Skipping load for this object.");
             return;
         }
 

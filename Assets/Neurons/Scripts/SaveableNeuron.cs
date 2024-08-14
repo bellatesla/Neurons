@@ -24,8 +24,10 @@ public class SaveableNeuron : MonoBehaviour, ISaveable
     }       
     public void SaveState(ref SaveSystem.SaveData savedData)
     {
-        if (!enabled)
+        // handle when gameobject is inactive
+        if (!gameObject.activeInHierarchy)
         {
+            print($"GameObject {gameObject.name} is not active. Skipping save for this object.");
             return;
         }
         NeuronSaveData newData = new NeuronSaveData();
@@ -65,8 +67,9 @@ public class SaveableNeuron : MonoBehaviour, ISaveable
     }
     public void LoadState(SaveSystem.SaveData state, int index)
     {
-        if (!enabled)
+        if (!gameObject.activeInHierarchy)
         {
+            print($"GameObject {gameObject.name} is not active. Skipping load for this object.");
             return;
         }
         // get saved data entry     
@@ -88,6 +91,13 @@ public class SaveableNeuron : MonoBehaviour, ISaveable
     }
     public void PostLoadState()
     {
+
+        if (!gameObject.activeInHierarchy)
+        {
+            print($"GameObject {gameObject.name} is not active. Skipping post load for this object.");
+            return;
+        }
+
         if (connectionIds == null || connectionIds.Count == 0)
         {
             Debug.LogWarning("No connections found to restore.");
@@ -122,8 +132,13 @@ public class SaveableNeuron : MonoBehaviour, ISaveable
     }
     public void Dispose()
     {
+        if (!gameObject.activeInHierarchy)
+        {
+            print($"GameObject {gameObject.name} is not active. Skipping dispose for this object.");
+            return;
+        }
         //handle when we need to delete self if we are not needed in the scene once loading completed
-        print("Destroying unused object");
+        print("Destroying self");
         Destroy(gameObject);
     }
     //public GameObject GetGameObject()

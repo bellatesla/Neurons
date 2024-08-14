@@ -46,21 +46,7 @@ public class SaveSystem : MonoBehaviour
         return path;
     }
 
-    List<ISaveable> GetAllActiveSaveables()
-    {
-        var saveables = new List<ISaveable>();
-        //var saveables = FindObjectsOfType<MonoBehaviour>(true).OfType<ISaveable>().ToList();
-
-        // inactive saveables are not allowed
-        FindObjectsSortMode sortMode = FindObjectsSortMode.None;
-        var saveableNeurons = FindObjectsByType<SaveableNeuron>(sortMode);
-        saveables.AddRange(saveableNeurons);
-
-        var saveableUI = FindObjectsByType<SaveableUI>(sortMode);
-        saveables.AddRange(saveableUI);
-
-        return saveables;
-    }
+   
     
     [ContextMenu("Load Game State")]
     void Load()
@@ -78,29 +64,31 @@ public class SaveSystem : MonoBehaviour
     }
 
     void LoadGame(SaveData saveData)
-    {        
-        //var saveables = FindAllInterfaces<ISaveable>();
-        var saveables = FindObjectsOfType<MonoBehaviour>(true).OfType<ISaveable>().ToList();       
+    {                
+        var saveables = GetAllActiveSaveables();
         // Dispose or Pre-load state
         foreach (var saveable in saveables)
         {
             saveable.Dispose();
         }
         saveables = new List<ISaveable>();
-        
         // Load state    
-        LoadUI(saveables, saveData);         
-        LoadNeurons(saveables, saveData);
-       
+        var uiSaveables = LoadUI(saveData);         
+        var neuronSaveables = LoadNeurons(saveData);        
+        saveables.AddRange(uiSaveables);
+        saveables.AddRange(neuronSaveables);
+        
         //Post-load state all saveables
         foreach (var saveable in saveables)
         {
             saveable.PostLoadState();
         }
+        print($"Loaded {saveables.Count} saveables");
     }
 
-    private void LoadNeurons(List<ISaveable> saveables, SaveData saveData)
+    private List<ISaveable> LoadNeurons(SaveData saveData)
     {
+        var saveables = new List<ISaveable>();
         for (int i = 0; i < saveData.neuronData.Count; i++)
         {
             GameObject newObject = Spawner.SpawnObject(saveData.neuronData[i]);
@@ -111,37 +99,62 @@ public class SaveSystem : MonoBehaviour
             saveables.Add(saveable);
             saveable.LoadState(saveData, i);
         }
+        return saveables;
     }
-
-    private static void LoadUI(List<ISaveable> saveables, SaveData saveData)
+    private static List<ISaveable> LoadUI(SaveData saveData)
     {
-        List<SaveableUI> uiElements = FindObjectsOfType<SaveableUI>().ToList();
+        var saveables = GetSelectableUI();
 
-        for (int i = uiElements.Count - 1; i >= 0; i--)
-        {
-            SaveableUI ui = uiElements[i];
-            // if inactive uiElement
-            if (!ui.gameObject.activeInHierarchy)
-            {
-                uiElements.RemoveAt(i);
-            }
-        }
-        print($"Found {uiElements.Count} Active UI elements");
-        
+        print($"Found {saveables.Count} Active UI elements");
+
         //might cause error - on test when object are inactive/active mismatch 
         // which might send mismatched data
         for (int i = 0; i < saveData.uiData.Count; i++)
         {
             // active elements
-            if (uiElements.Count > i)
+            if (saveables.Count > i)
             {
-                saveables.Add(uiElements[i]);
-                uiElements[i].LoadState(saveData, i);
+                //saveables.Add(uiElements[i]);
+                saveables[i].LoadState(saveData, i);
             }
-            
+
         }
+
+        return saveables;
     }
 
+    static List<ISaveable> GetAllActiveSaveables()
+    {
+        var saveables = new List<ISaveable>();
+       
+        saveables.AddRange(GetSelectableNeurons());        
+        saveables.AddRange(GetSelectableUI());
+        print($"Saveable Count{saveables.Count}");
+        return saveables;
+    }
+    static List<ISaveable> GetSelectableNeurons()
+    {
+        var saveables = new List<ISaveable>();       
+
+        // inactive saveables are not allowed
+        FindObjectsSortMode sortMode = FindObjectsSortMode.None;
+        var saveableUI = FindObjectsByType<SaveableNeuron>(sortMode);
+        saveables.AddRange(saveableUI);
+        
+        return saveables;
+    }
+    static List<ISaveable> GetSelectableUI()
+    {
+        var saveables = new List<ISaveable>();       
+
+        // inactive saveables are not allowed
+        FindObjectsSortMode sortMode = FindObjectsSortMode.None;
+        var saveableUI = FindObjectsByType<SaveableUI>(sortMode);
+        saveables.AddRange(saveableUI);
+        
+        return saveables;
+    }
+    
     public List<T> FindAllInterfaces<T>() where T : class
     {
         List<T> results = new List<T>();

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class SaveableUI : MonoBehaviour, ISaveable
 {
-   
+   [Header("Auto finds the following types")]
     public TMP_Text tmp_text;//save/load this text
     public TMP_InputField inputField;
     void Awake()
@@ -17,6 +17,13 @@ public class SaveableUI : MonoBehaviour, ISaveable
 
     public void SaveState(ref SaveSystem.SaveData savedData)
     {
+        // If we are disabled don't add any save data
+        if (!enabled)
+        {
+            return; 
+        }
+
+
         UISaveData newData = new UISaveData
         {
             id = GetID(),
@@ -31,6 +38,11 @@ public class SaveableUI : MonoBehaviour, ISaveable
 
     public void LoadState(SaveSystem.SaveData state, int index)
     {
+        if (!enabled)
+        {
+            return;
+        }
+
         UISaveData data = state.uiData[index];
         
         // Ensure we're loading the correct data
@@ -47,7 +59,7 @@ public class SaveableUI : MonoBehaviour, ISaveable
 
     public void Dispose()
     {
-        // UI elements are not destroyed, so this might not be needed.
+        // UI elements are not destroyed, so this might not be needed.        
     }
 }
 

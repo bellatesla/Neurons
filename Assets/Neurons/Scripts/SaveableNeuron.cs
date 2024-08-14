@@ -23,7 +23,11 @@ public class SaveableNeuron : MonoBehaviour, ISaveable
         return gameObject.GetInstanceID();
     }       
     public void SaveState(ref SaveSystem.SaveData savedData)
-    {        
+    {
+        if (!enabled)
+        {
+            return;
+        }
         NeuronSaveData newData = new NeuronSaveData();
 
         newData.id = GetID();//no need to set this id        
@@ -60,11 +64,13 @@ public class SaveableNeuron : MonoBehaviour, ISaveable
         savedData.neuronData.Add(newData);       
     }
     public void LoadState(SaveSystem.SaveData state, int index)
-    {       
-        // Apply saved data        
-        NeuronSaveData data = state.neuronData[index];
-        //Addobject
-        //SaveSystem.idToObjectDictionary.Add(data.id,gameObject);
+    {
+        if (!enabled)
+        {
+            return;
+        }
+        // get saved data entry     
+        NeuronSaveData data = state.neuronData[index];        
         // Position
         transform.position = data.position;
         // scale        

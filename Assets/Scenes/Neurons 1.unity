@@ -735,7 +735,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tmp_text: {fileID: 0}
-  inputField: {fileID: 0}
 --- !u!1 &77020984
 GameObject:
   m_ObjectHideFlags: 0
@@ -6613,7 +6612,6 @@ GameObject:
   - component: {fileID: 1111788150}
   - component: {fileID: 1111788151}
   - component: {fileID: 1111788152}
-  - component: {fileID: 1111788153}
   m_Layer: 0
   m_Name: Neuron Manger
   m_TagString: Untagged
@@ -6702,18 +6700,6 @@ MonoBehaviour:
   minY: 1
   maxY: 5.5
   smoothTime: 0.1
---- !u!114 &1111788153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1111788145}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cebb50d86e533c4f991111c784e3aaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1117760506
 GameObject:
   m_ObjectHideFlags: 0
@@ -12998,7 +12984,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tmp_text: {fileID: 0}
-  inputField: {fileID: 0}
 --- !u!1 &2129298762
 GameObject:
   m_ObjectHideFlags: 0

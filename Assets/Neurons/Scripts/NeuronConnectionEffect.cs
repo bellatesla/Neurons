@@ -63,20 +63,20 @@ public class NeuronConnectionEffect : MonoBehaviour
                 
                 float t = value;
                 
-                Color connectionColor;
+                //Color connectionColor;
                 
-                if (t < 0)
-                {
-                    t *= -1;//flip for neg values
-                    connectionColor = Color.Lerp(settings.lineSettings.lineInactiveColor, settings.lineSettings.lineNegativeColor, t);
-                }
-                else
-                {
-                    connectionColor = Color.Lerp(settings.lineSettings.lineInactiveColor, settings.lineSettings.linePositiveColor, t);
-                }
+                //if (t < 0)
+                //{
+                //    t *= -1;//flip for neg values
+                //    connectionColor = Color.Lerp(settings.lineSettings.lineInactivePositiveColor, settings.lineSettings.lineNegativeColor, t);
+                //}
+                //else
+                //{
+                //    connectionColor = Color.Lerp(settings.lineSettings.lineInactivePositiveColor, settings.lineSettings.linePositiveColor, t);
+                //}
                 
-                lineRenderer.startColor = connectionColor;
-                lineRenderer.endColor = connectionColor;
+                //lineRenderer.startColor = connectionColor;
+                //lineRenderer.endColor = connectionColor;
                 float width = Mathf.Clamp(strength, settings.lineSettings.lineWidthMin, settings.lineSettings.lineWidthMax);
                 width *= settings.lineSettings.lineWidthScale;
                 lineRenderer.startWidth = width;

@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class SaveableUI : Saveable
 {
-   [Header("Auto finds the following types")]
+    [Header("Auto finds the following types")]
     public TMP_Text tmp_text;//save/load this text
-    
+
     void Awake()
     {        
         tmp_text = GetComponent<TMP_Text>();     

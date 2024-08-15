@@ -31,18 +31,37 @@ This project aims to simulate the behavior of neurons using a real-time 3D envir
 
 <img src="images/neuron_settings2.png" alt="Neuron Settings" width="400"/>
 
+To add instructions for setting up Newtonsoft.Json and JsonSubTypes to your README, you can update it with the following section:
+
+---
+
 ## Installation
 
-1. **Clone the Repository:**
-    ```bash
-    git clone https://github.com/yourusername/neuron-simulation.git
-    ```
-2. **Open in Unity:**
-   - Make sure you have Unity installed.
-   - Open the project in Unity by selecting the `neuron-simulation` folder.
+### Cloning the Repository
 
-3. **Install Dependencies:**
-   - All required packages will be installed automatically when you open the project in Unity.
+1. Clone the Repository:
+    ```bash
+    git clone https://github.com/yourusername/neurons.git
+    ```
+
+2. Open in Unity:
+    - Make sure you have Unity installed.
+    - Open the project in Unity by selecting the `neuron-simulation` folder.
+
+### Setting Up Newtonsoft.Json and JsonSubTypes
+
+1. **Add Newtonsoft.Json via Unity Package Manager:**
+   - Open Unity and navigate to **Window** > **Package Manager**.
+   - Click the **+** button in the top left and choose **Add package from git URL**.
+   - Enter: `https://github.com/jilleJr/Newtonsoft.Json-for-Unity.git#upm`.
+   - Click **Add**.
+
+2. **Add JsonSubTypes:**
+   - Download the JsonSubTypes DLL from the [GitHub repository](https://github.com/manuc66/JsonSubTypes/releases).
+   - Place the DLL in the `Assets/Plugins` folder of your Unity project.
+
+---
+
 
 ## Usage
 

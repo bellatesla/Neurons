@@ -96,16 +96,16 @@ public class NeuronColor : MonoBehaviour
 
     private void SetPositiveColors(float value)
     {
-        Color positiveColor = Color.Lerp(settings.inactiveColor, settings.positiveColor, value);
-        Color emissiveColor = Color.Lerp(settings.inactiveColor, settings.positiveColor * Mathf.GammaToLinearSpace(settings.emission), value);
+        Color positiveColor = Color.Lerp(settings.neuronColors.inactivePositiveColor, settings.neuronColors.inactivePositiveColor, value);
+        Color emissiveColor = Color.Lerp(settings.neuronColors.inactivePositiveColor, settings.neuronColors.inactivePositiveColor * Mathf.GammaToLinearSpace(settings.emission), value);
         material.SetColor("_EmissionColor", emissiveColor);
         material.color = positiveColor;
     }
 
     private void SetNegativeColors(float value)
     {
-        Color negativeColor = Color.Lerp(settings.inactiveColor2, settings.negativeColor, value);
-        Color emissiveColor = Color.Lerp(settings.inactiveColor2, settings.negativeColor * Mathf.GammaToLinearSpace(settings.emission), value);
+        Color negativeColor = Color.Lerp(settings.neuronColors.inactiveNegativeColor, settings.neuronColors.NegativeColor, value);
+        Color emissiveColor = Color.Lerp(settings.neuronColors.inactiveNegativeColor, settings.neuronColors.NegativeColor * Mathf.GammaToLinearSpace(settings.emission), value);
         material.SetColor("_EmissionColor", emissiveColor);
         material.color = negativeColor;
     }

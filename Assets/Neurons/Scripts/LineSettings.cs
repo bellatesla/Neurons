@@ -11,10 +11,18 @@ public class LineSettings
     public float lineStartWidth = 1f;
     public float lineEndWidth = .5f;
     public float lineWidthScale = 1f;
-
-    public Color linePositiveColor = Color.red;
-    public Color lineNegativeColor = Color.green;
-    public Color lineInactiveColor = Color.white;
+    
+    public EffectColors effectColors;
+    
     public float emission = 0;
     public Material baseLineMaterial;
+}
+
+[System.Serializable]
+public class EffectColors
+{
+    public Color PositiveColor = Color.red;
+    public Color NegativeColor = Color.green;
+    public Color inactivePositiveColor = Color.white;
+    public Color inactiveNegativeColor = Color.white;
 }

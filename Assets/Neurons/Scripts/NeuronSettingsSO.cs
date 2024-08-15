@@ -13,7 +13,7 @@ public class NeuronSettingsSO : ScriptableObject
     [Header("Neuron Connection Settings")]
     public float connectionStrengthenRate = 0.1f;
     public float connectionWeakenRate = 0.001f;
-    
+
     public float connectionStrengthMax = 1f;
     public float connectionStrengthDefault = 0.5f;
 
@@ -27,14 +27,15 @@ public class NeuronSettingsSO : ScriptableObject
     [Header("Neuron Growth Settings")]
     public float connectionAddRadius = 1;
     public int maxConnections = 3;
-    
+
     [Header("Effects Settings")]
 
     [Header("Colors Settings")]
-    public Color positiveColor = new Color(1, 0, 0, 1);//red
-    public Color negativeColor = new Color(0, 1, 0, 1);//green
-    public Color inactiveColor = new Color(1, 1, 1, 1);//white
-    public Color inactiveColor2 = new Color(0, 0, 0, 1);//black
+    public EffectColors neuronColors;
+    //public Color positiveColor = new Color(1, 0, 0, 1);//red
+    //public Color negativeColor = new Color(0, 1, 0, 1);//green
+    //public Color inactiveColor = new Color(1, 1, 1, 1);//white
+    //public Color inactiveColor2 = new Color(0, 0, 0, 1);//black
 
     public float emission = 1;
 
@@ -51,8 +52,9 @@ public class NeuronSettingsSO : ScriptableObject
     //public Color lineNegativeColor = new Color(0, 1, 0, 1);//green
     //public Color lineInactiveColor = new Color(1, 1, 1, 1);//white
     //public float lineColorActivityDecayDuration = 1.0f;//how fast the signal decays in the neuron
-    
+
     [Header("Particle Effects")]
+    public EffectColors particleColors;
     public GameObject particleEffectsPrefab;
     public float particleSize = .2f;
     public float scaleStrength = 1;

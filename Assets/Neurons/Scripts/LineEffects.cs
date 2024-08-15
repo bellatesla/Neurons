@@ -37,11 +37,11 @@ public class LineEffects : NeuronEffect
                     if (neuron.neuronType == NeuronType.Inhibitory)
                     {
                         //t *= -1;//flip for neg values
-                        connectionColor = Color.Lerp(LineSettings().lineInactiveColor, LineSettings().lineNegativeColor, value);
+                        connectionColor = Color.Lerp(LineSettings().effectColors.inactiveNegativeColor, LineSettings().effectColors.NegativeColor, value);
                     }
                     else
                     {
-                        connectionColor = Color.Lerp(LineSettings().lineInactiveColor, LineSettings().linePositiveColor, value);
+                        connectionColor = Color.Lerp(LineSettings().effectColors.inactivePositiveColor, LineSettings().effectColors.PositiveColor, value);
                     }
 
                     lineRenderer.startColor = connectionColor;

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SaveableNeuron : MonoBehaviour, ISaveable
+public class SaveableNeuron : Saveable
 {    
-    private List<int> connectionIds;
+    private List<int> connectionIds = new List<int>();
     Neuron _neuron;
     private Neuron neuron
     {
@@ -22,47 +22,44 @@ public class SaveableNeuron : MonoBehaviour, ISaveable
     {        
         return gameObject.GetInstanceID();
     }       
-    public void SaveState(ref SaveSystem.SaveData savedData)
+    public override void SaveState(ref SaveSystem.DataContainer savedData)
     {        
         NeuronSaveData newData = new NeuronSaveData();
 
-        newData.id = GetID();//no need to set this id        
-        
+        newData.id = GetID();      
         // Save position
-        newData.x = transform.position.x;
-        newData.y = transform.position.y;
-        newData.z = transform.position.z;
-        newData.neuronType = GetComponent<Neuron>().neuronType;
-        
-        // Save Scale
+        newData.position = transform.position; 
+        // Neuron Type
+        newData.neuronType = GetComponent<Neuron>().neuronType;        
+        // Save scale
         NeuronScale scaleComp = GetComponent<NeuronScale>();
-        Vector3 scale = new Vector3();
+        
         if (scaleComp)
         {
-            scale = scaleComp.GetDefaultScale();
+            newData.scale = scaleComp.GetDefaultScale();
         }
-        else scale = transform.lossyScale;
-
-        newData.scale_x = scale.x;
-        newData.scale_y = scale.y;
-        newData.scale_z = scale.z;
-
-        // save every neuron connection by game object id
+        else newData.scale = transform.lossyScale;
+        
+       // Prepare connections
         List<Neuron> connections = GetComponent<Neuron>().connections;
         newData.connectionIds = new List<int>();
-               
+        
+        // Save connections as ids 
         foreach (var neuron in connections)
         {
             newData.connectionIds.Add(neuron.GetComponent<SaveableNeuron>().GetID());           
         }
+
+        //Save prefab name
         newData.prefabName = "Neuron";
 
-        savedData.neuronData.Add(newData);       
+        //Add the data to be saved
+        savedData.objectSaves.Add(newData);       
     }
-    public void LoadState(SaveSystem.SaveData state, int index)
+    public override void LoadState(SaveableTypeBase state)
     {        
         // get saved data entry     
-        NeuronSaveData data = state.neuronData[index];        
+        NeuronSaveData data = (NeuronSaveData)state;        
         // Position
         transform.position = data.position;
         // scale        
@@ -73,26 +70,12 @@ public class SaveableNeuron : MonoBehaviour, ISaveable
             scaler.SetDefaultScale(data.scale);
         }
 
-        // Initialize connectionIds here
-        connectionIds = data.connectionIds ?? new List<int>();
-        //print($"Connection Id {data.connectionIds}");
+        // Initialize connectionIds
+        connectionIds = data.connectionIds;       
 
     }
-    public void PostLoadState()
+    public override void PostLoadState()
     {
-
-        if (!gameObject.activeInHierarchy)
-        {
-            print($"GameObject {gameObject.name} is not active. Skipping post load for this object.");
-            return;
-        }
-
-        if (connectionIds == null || connectionIds.Count == 0)
-        {
-            Debug.LogWarning("No connections found to restore.");
-            //return;
-        }
-
         neuron.connections = new List<Neuron>();
 
         foreach (int conID in connectionIds)
@@ -119,7 +102,7 @@ public class SaveableNeuron : MonoBehaviour, ISaveable
 
         neuron.ForceFire(1);
     }
-    public void Dispose()
+    public override void Dispose()
     {
         if (!gameObject.activeInHierarchy)
         {
@@ -130,10 +113,7 @@ public class SaveableNeuron : MonoBehaviour, ISaveable
         print("Destroying self");
         Destroy(gameObject);
     }
-    //public GameObject GetGameObject()
-    //{
-    //    return gameObject;
-    //}
+    
        
 }
 

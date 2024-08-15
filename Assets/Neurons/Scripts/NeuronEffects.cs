@@ -102,11 +102,11 @@ public class NeuronEffects : MonoBehaviour
             
             if (neuron.neuronType == NeuronType.Inhibitory )
             {                
-                connectionColor = Color.Lerp(settings.inactiveColor, settings.negativeColor, 1);
+                connectionColor = Color.Lerp(settings.particleColors.inactiveNegativeColor, settings.particleColors.NegativeColor, 1);
             }
             else
             {
-                connectionColor = Color.Lerp(settings.inactiveColor, settings.positiveColor, 1);
+                connectionColor = Color.Lerp(settings.particleColors.inactivePositiveColor, settings.particleColors.PositiveColor, 1);
             }
 
             main.startColor = connectionColor;

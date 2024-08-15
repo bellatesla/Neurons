@@ -4,25 +4,15 @@ using UnityEngine;
 public class SaveSpawner : MonoBehaviour
 {
     public GameObject neuronPrefab;
-    GameObject currentPrefab;
-    public GameObject SpawnObject(NeuronSaveData data)
+    
+    public GameObject SpawnObject(SaveableTypeBase savedItem)
     {
-        if (data.prefabName =="Neuron")
+        if (savedItem is NeuronSaveData neuronData)
         {
-            print($"Spawner creating new {data.prefabName} prefab");
-            currentPrefab = neuronPrefab;
+            print($"Spawner found prefab name: {neuronData.prefabName}");
+            return Instantiate(neuronPrefab);
         }
 
-        return Instantiate(currentPrefab);        
-    }
-    public GameObject SpawnObject(int data)
-    {
-        if (data==0)
-        {
-            print("Found OtherType..Spawning");
-            //currentPrefab = neuronPrefab;
-        }
-
-        return null;//Instantiate(currentPrefab);
+        return null;
     }
 }

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Newtonsoft.Json;
+using JsonSubTypes;
 
 [RequireComponent(typeof(SaveSpawner))]
 public class SaveSystem : MonoBehaviour
@@ -25,195 +27,187 @@ public class SaveSystem : MonoBehaviour
     {
         var saveables = GetAllActiveSaveables();       
         
-        SaveData saveData = new SaveData();
+        DataContainer saveData = new DataContainer();
         
         // Add save data from all saveables
         foreach (var saveable in saveables)
         {
             saveable.SaveState(ref saveData);
         }
-        
+        //print($"Found data for {saveData.objectSaves.Count} ");
         string path = SaveToFile(saveData);
         print($"Saved data for {saveables.Count} objects to {path} ");
-    }
+    }    
 
-    private static string SaveToFile(SaveData saveData)
-    {
-        // Save to file
-        string jsonData = JsonUtility.ToJson(saveData, true);
-        string path = Application.persistentDataPath + "/"+ filename;
-        System.IO.File.WriteAllText(path, jsonData);
-        return path;
-    }
-
-   
-    
     [ContextMenu("Load Game State")]
     void Load()
     {
         IDToObjectDictionary = new Dictionary<int, GameObject>();
-        SaveData saveData = LoadFromFile();
-        LoadGame(saveData);
+        DataContainer saveData = LoadFromFile();
+        StartCoroutine(LoadGame(saveData));
     }
-
-    private static SaveData LoadFromFile()
+    private static string SaveToFile(DataContainer saveData)
     {
-        string jsonData = System.IO.File.ReadAllText(Application.persistentDataPath + "/" + filename);
-        SaveData saveData = JsonUtility.FromJson<SaveData>(jsonData);
+        // Save to file
+        string json = JsonConvert.SerializeObject(saveData, Formatting.Indented,
+           new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore });
+        //string jsonData = JsonUtility.ToJson(saveData, true);
+        string path = Application.persistentDataPath + "/" + filename;
+        System.IO.File.WriteAllText(path, json);
+        return path;
+    }
+    private static DataContainer LoadFromFile()
+    {
+        string jsonData = System.IO.File.ReadAllText(Application.persistentDataPath + "/" + filename);       
+        DataContainer saveData = JsonConvert.DeserializeObject<DataContainer>(jsonData);
         return saveData;
     }
 
-    void LoadGame(SaveData saveData)
+    IEnumerator LoadGame(DataContainer saveData)
     {                
         var saveables = GetAllActiveSaveables();
+        
         // Dispose or Pre-load state
         foreach (var saveable in saveables)
         {
             saveable.Dispose();
         }
-        saveables = new List<ISaveable>();
-        // Load state    
-        var uiSaveables = LoadUI(saveData);         
-        var neuronSaveables = LoadNeurons(saveData);        
-        saveables.AddRange(uiSaveables);
-        saveables.AddRange(neuronSaveables);
+
+        //After dispose we wait a few frames
+        //to allow the destroy methods to finish.
+        yield return null;
+        yield return null;
+
+        //Find saveables that are still active
+        saveables = GetAllActiveSaveables();//get ui
+        print($"Found {saveables.Count} elements still in scene");
+
+        // Load UI
+        for (int i = 0; i < saveables.Count; i++)
+        {
+            SaveableTypeBase item = saveData.objectSaves[i];
+            if (item is UITextdata uiTextData)
+            {     
+                saveables[i].LoadState(uiTextData);
+            }
+        }
+
+        // Load Neurons       
+        for (int i = 0; i < saveData.objectSaves.Count; i++)
+        {
+            SaveableTypeBase item = saveData.objectSaves[i];
+            
+            //load common properties
+            Debug.Log("Common Property: " + item.commonProperty);
+            if (item is NeuronSaveData neuronData)
+            {
+                //specific properties
+                Debug.Log("Specific Property A: " + neuronData.prefabName);
+                GameObject newObject = Spawner.SpawnObject(neuronData);
+                Saveable saveable = newObject.GetComponent<Saveable>();
+
+                //Add object id for look up in dictionary
+                SaveSystem.IDToObjectDictionary.Add(neuronData.id, newObject);
+
+                saveable.LoadState(neuronData);
+                saveables.Add(saveable);
+            }                
+        }
+
+        print("Wait for spawned objects initialization");
+        yield return null;
         
         //Post-load state all saveables
         foreach (var saveable in saveables)
         {
             saveable.PostLoadState();
         }
-        print($"Loaded {saveables.Count} saveables");
+
+        print($"Loaded Complete: {saveables.Count} saveables");
     }
-
-    private List<ISaveable> LoadNeurons(SaveData saveData)
+    static List<Saveable> GetAllActiveSaveables()
     {
-        var saveables = new List<ISaveable>();
-        for (int i = 0; i < saveData.neuronData.Count; i++)
-        {
-            GameObject newObject = Spawner.SpawnObject(saveData.neuronData[i]);
-            //Addobject
-            SaveSystem.IDToObjectDictionary.Add(saveData.neuronData[i].id, newObject);
-            ISaveable saveable = newObject.GetComponent<ISaveable>();
-            //add the new saveable to list
-            saveables.Add(saveable);
-            saveable.LoadState(saveData, i);
-        }
-        return saveables;
-    }
-    private static List<ISaveable> LoadUI(SaveData saveData)
-    {
-        var saveables = GetSelectableUI();
+        var saveables = new List<Saveable>();       
 
-        print($"Found {saveables.Count} Active UI elements");
-
-        //might cause error - on test when object are inactive/active mismatch 
-        // which might send mismatched data
-        for (int i = 0; i < saveData.uiData.Count; i++)
-        {
-            // active elements
-            if (saveables.Count > i)
-            {
-                //saveables.Add(uiElements[i]);
-                saveables[i].LoadState(saveData, i);
-            }
-
-        }
-
-        return saveables;
-    }
-
-    static List<ISaveable> GetAllActiveSaveables()
-    {
-        var saveables = new List<ISaveable>();
-       
-        saveables.AddRange(GetSelectableNeurons());        
-        saveables.AddRange(GetSelectableUI());
-        print($"Saveable Count{saveables.Count}");
-        return saveables;
-    }
-    static List<ISaveable> GetSelectableNeurons()
-    {
-        var saveables = new List<ISaveable>();       
-
-        // inactive saveables are not allowed
-        FindObjectsSortMode sortMode = FindObjectsSortMode.None;
-        var saveableUI = FindObjectsByType<SaveableNeuron>(sortMode);
-        saveables.AddRange(saveableUI);
+        // inactive saveables are not allowed        
+        bool includeInactive = false;
+        var saveable = FindObjectsOfType<Saveable>(includeInactive);
+        saveables.AddRange(saveable);
         
         return saveables;
-    }
-    static List<ISaveable> GetSelectableUI()
-    {
-        var saveables = new List<ISaveable>();       
-
-        // inactive saveables are not allowed
-        FindObjectsSortMode sortMode = FindObjectsSortMode.None;
-        var saveableUI = FindObjectsByType<SaveableUI>(sortMode);
-        saveables.AddRange(saveableUI);
-        
-        return saveables;
-    }
+    }     
     
-    public List<T> FindAllInterfaces<T>() where T : class
-    {
-        List<T> results = new List<T>();
-        MonoBehaviour[] allMonoBehaviours = FindObjectsOfType<MonoBehaviour>();
-
-        foreach (var monoBehaviour in allMonoBehaviours)
-        {
-            T component = monoBehaviour as T;
-            if (component != null)
-            {
-                results.Add(component);
-            }
-        }
-
-        return results;
-    }
-       
     [System.Serializable]
-    public class SaveData
+    public class DataContainer
     {
-        public List<NeuronSaveData> neuronData;
-        public List<UISaveData> uiData;
+        public List<SaveableTypeBase> objectSaves;       
 
-        public SaveData()
-        {
-            neuronData = new List<NeuronSaveData>();
-            uiData = new List<UISaveData>();
+        public DataContainer()
+        {            
+            objectSaves = new List<SaveableTypeBase>();
         }
-    }    
+    }
 
-}
-[System.Serializable]
-public class UISaveData
-{
-    public int id;
-    public string uiText;
-    public float x;
-    public float y;
-    public float z;
-
-    public Vector3 position => new Vector3(x, y, z);
 }
 
 
 [System.Serializable]
-public class NeuronSaveData
+[JsonConverter(typeof(JsonSubtypes), "Type")]
+[JsonSubtypes.KnownSubType(typeof(NeuronSaveData), "A")]
+[JsonSubtypes.KnownSubType(typeof(UITextdata), "B")]
+public class SaveableTypeBase
 {
+
+    public string commonProperty = "Common to all derived";
+    public string Type;  // This property will help to distinguish between different derived types
+    // All properties that are common to all saves
+    //id
     public int id;
+    //position
     public float x;
     public float y;
     public float z;
-    public float scale_x;
-    public float scale_y;
-    public float scale_z;
+    //scale
+    public float scaleX;
+    public float scaleY;
+    public float scaleZ;
+    //rotation
+    public float rotX;
+    public float rotY;
+    public float rotZ;
+    public float rotW;
+
+    [JsonIgnore]
+    public Quaternion rotation { get => new Quaternion(rotX, rotY, rotZ, rotW); set { rotX = value.x; rotY = value.y; rotZ = value.z; rotW = value.w; } }
+    [JsonIgnore]
+    public Vector3 scale { get => new Vector3(scaleX, scaleY, scaleZ); set { scaleX = value.x; scaleY = value.y; scaleZ = value.z; } }
+    [JsonIgnore]
+    public Vector3 position { get => new Vector3(x, y, z); set { x = value.x; y = value.y; z = value.z; } }
+}
+
+[System.Serializable]
+public class UITextdata : SaveableTypeBase
+{
+    public float specificPropertyB;
+    public string text;
+    
+    public UITextdata()
+    {
+        Type = "B";
+    }
+}
+
+
+[System.Serializable]
+public class NeuronSaveData : SaveableTypeBase
+{
+    public string specificPropertyA;    
     public NeuronType neuronType;
     public List<int> connectionIds;
     public string prefabName;
 
-    public Vector3 position => new Vector3(x, y, z);
-    public Vector3 scale => new Vector3(scale_x, scale_y, scale_z);
-
+    public NeuronSaveData()
+    {
+        Type = "A";
+    } 
 }

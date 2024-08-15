@@ -4,34 +4,32 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SaveableUI : MonoBehaviour, ISaveable
+public class SaveableUI : Saveable
 {
    [Header("Auto finds the following types")]
     public TMP_Text tmp_text;//save/load this text
-    public TMP_InputField inputField;
+    
     void Awake()
     {        
-        tmp_text = GetComponent<TMP_Text>();///Winner! for normal text       
+        tmp_text = GetComponent<TMP_Text>();     
     }
     private int GetID() => gameObject.GetInstanceID();
 
-    public void SaveState(ref SaveSystem.SaveData savedData)
-    {        
-        UISaveData newData = new UISaveData
+    public override void SaveState(ref SaveSystem.DataContainer savedData)
+    {
+        UITextdata newData = new UITextdata
         {
             id = GetID(),
-            uiText = tmp_text.text, // Save the UI text, adjust as needed
-            x = transform.position.x,
-            y = transform.position.y,
-            z = transform.position.z
+            text = tmp_text.text, // Save the UI text, adjust as needed
+            //position = transform.position
         };
 
-        savedData.uiData.Add(newData);
+        savedData.objectSaves.Add(newData);
     }
 
-    public void LoadState(SaveSystem.SaveData state, int index)
+    public override void LoadState(SaveableTypeBase state)
     {
-        UISaveData data = state.uiData[index];
+        UITextdata data = (UITextdata)state;
         
         // Ensure we're loading the correct data
         if (data.id != GetID())//this might not work as intended if 
@@ -40,12 +38,12 @@ public class SaveableUI : MonoBehaviour, ISaveable
             return;
         }
         //transform.position = data.position;
-        tmp_text.text = data.uiText; // Load the UI text, adjust as needed
+        tmp_text.text = data.text; // Load the UI text, adjust as needed
     }
 
-    public void PostLoadState() { /* UI elements may not need post-load logic */ }
+    public override void PostLoadState() { /* UI elements may not need post-load logic */ }
 
-    public void Dispose()
+    public override void Dispose()
     {
         // UI elements are not destroyed, so this might not be needed.        
     }

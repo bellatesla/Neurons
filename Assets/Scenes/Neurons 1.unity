@@ -21281,12 +21281,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
+  mousemoveSpeed: 9
   cameraTransform: {fileID: 2143839383}
   mouseSensitivity: 0
   xRotation: 0
   scrollSpeed: 2
   minY: 1
-  maxY: 5.5
+  maxY: 20
   smoothTime: 0.1
 --- !u!1 &1112355514
 GameObject:

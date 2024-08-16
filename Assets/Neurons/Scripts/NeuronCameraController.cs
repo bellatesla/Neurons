@@ -5,6 +5,7 @@ using UnityEngine;
 public class NeuronCameraController : MonoBehaviour
 {
     public float moveSpeed = 1;
+    public float mousemoveSpeed = 5;
     public Transform cameraTransform;
     public float mouseSensitivity = 1;
     public float xRotation;
@@ -13,8 +14,8 @@ public class NeuronCameraController : MonoBehaviour
     public float minY = 10f; // Minimum y position (zoomed out)
     public float maxY = 100f; // Maximum y position (zoomed in)
     public float smoothTime = 0.3f; // Time to smooth the camera movement
-
-    
+    Vector3 targetPosition;
+    Vector3 velocity;
     private float _currentY;
     private float _targetY;
     void Start()
@@ -29,7 +30,8 @@ public class NeuronCameraController : MonoBehaviour
     }    
     void Update()
     {
-        UpdateMovement();
+        UpdateKBMovement();
+        UpdateMouseMovement();
         UpdateLookRotation();
         UpdateMouseScroll();
 
@@ -49,8 +51,30 @@ public class NeuronCameraController : MonoBehaviour
         // Update the camera's position
         cameraTransform.position = new Vector3(cameraTransform.position.x, _currentY, cameraTransform.position.z);
     }
-    void UpdateMovement()
+   
+    void UpdateMouseMovement()
     {
+
+        if (Input.GetMouseButton(2))
+        {
+            // Get the mouse movement in the X and Y axis
+            float moveX = Input.GetAxis("Mouse X");
+            float moveY = Input.GetAxis("Mouse Y");
+            targetPosition = cameraTransform.position;
+            // Update the target position based on mouse movement
+            //the speed needs to change with distance from ground
+            targetPosition += new Vector3(-moveX, 0, -moveY) * mousemoveSpeed * Time.deltaTime;
+            // Smoothly move the camera to the target position
+            cameraTransform.position = targetPosition;
+        }
+       
+       
+
+
+    }
+    void UpdateKBMovement()
+    {
+        //keyboard movement
         Vector3 input = Vector3.zero;
         //arrows to camera world x,z
         var h = Input.GetAxis("Horizontal");

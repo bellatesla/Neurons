@@ -24,7 +24,7 @@ MonoBehaviour:
   polarizationTriggerDuration: 0.02
   depolarizationTriggerDuration: 0.09
   connectionAddRadius: 2.22
-  maxConnections: 2
+  maxConnections: 0
   neuronColors:
     PositiveColor: {r: 0.019392133, g: 1, b: 0, a: 1}
     NegativeColor: {r: 1, g: 0.114379376, b: 0, a: 1}

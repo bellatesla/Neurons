@@ -97,7 +97,7 @@ public class NeuronUI : MonoBehaviour
         if (neuron == null) return;
         neuron.ForceFire(voltage);
     }
-    void OnClickedRemoveButton()
+    public void OnClickedRemoveButton()
     {
         int count = highlightedNeuron.connections.Count;
         if (count > 0)
@@ -106,18 +106,18 @@ public class NeuronUI : MonoBehaviour
             RemoveConnection(highlightedNeuron, highlightedNeuron.connections[count - 1]);
         }
     }
-    void OnClickedInvertButton()
+    public void OnClickedInvertButton()
     {       
         if (highlightedNeuron)
         {
             highlightedNeuron.Invert();
         }
     }
-    void OnClickedPositiveFireButton()
+    public void OnClickedPositiveFireButton()
     {
         FireNeuron(highlightedNeuron,1);
     }
-    void OnClickedNegativeFireButton()
+    public void OnClickedNegativeFireButton()
     {
         FireNeuron(highlightedNeuron,-1);
     }

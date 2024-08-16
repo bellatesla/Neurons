@@ -167,9 +167,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &12300781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,9 +440,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &54197561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -897,9 +897,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &69232653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1268,9 +1268,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &85754289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1505,9 +1505,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &99810025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1742,9 +1742,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &109011863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1979,9 +1979,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &118349683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2216,9 +2216,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &128182914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2453,9 +2453,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &140734106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2905,9 +2905,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &158137711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3253,9 +3253,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   frequency: 2
   amplitude: 1
   maxConnections: 8
@@ -3329,9 +3329,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &192844908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3566,9 +3566,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &195592448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3803,9 +3803,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &196453000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4040,9 +4040,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &213716751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4277,9 +4277,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &215076644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4514,9 +4514,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &252140726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4751,9 +4751,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &252199862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4988,9 +4988,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &253078809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5225,9 +5225,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &254653380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5418,6 +5418,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1584147174}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &276424346 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+  m_PrefabInstance: {fileID: 1651615561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &276424347 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2519196408210662929, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+  m_PrefabInstance: {fileID: 1651615561}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7479e11c29522a34d9bcc736b2c8464d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &320524225
 GameObject:
   m_ObjectHideFlags: 0
@@ -5462,9 +5478,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &320524227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5699,9 +5715,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &321128770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5920,7 +5936,7 @@ RectTransform:
   m_GameObject: {fileID: 328621262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.22, y: 0.22, z: 0.22}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 353938789}
@@ -6031,9 +6047,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &333294625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6268,9 +6284,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &346716718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6505,9 +6521,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &350170289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6965,9 +6981,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &395113511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7202,9 +7218,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &395730202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7439,9 +7455,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &396444315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7676,9 +7692,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &407115842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7913,9 +7929,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &418006909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8150,9 +8166,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &424419828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8387,9 +8403,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &427211966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8699,9 +8715,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &449758075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8936,9 +8952,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &465768340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9173,9 +9189,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &466592900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9410,9 +9426,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &486836376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9647,9 +9663,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &496659554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9884,9 +9900,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &535149470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10121,9 +10137,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &541799265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10358,9 +10374,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &551709456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10595,9 +10611,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &552939099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10832,9 +10848,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &564022549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11069,9 +11085,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &573912093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11412,9 +11428,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &599891686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11649,9 +11665,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &630106517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11886,9 +11902,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &637146271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12123,9 +12139,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &638236312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12360,9 +12376,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &644739480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12597,9 +12613,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &658846202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12834,9 +12850,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &662720070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13071,9 +13087,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &675422186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13413,9 +13429,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &703205720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13650,9 +13666,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &708441630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13887,9 +13903,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &709006851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14124,9 +14140,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &770890279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14361,9 +14377,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &773059768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14598,9 +14614,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &803501741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14835,9 +14851,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &807182435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15072,9 +15088,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &811905423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15511,9 +15527,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &821056841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15748,9 +15764,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &846646345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15985,9 +16001,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &853019106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16222,9 +16238,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &855856514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16459,9 +16475,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &883705314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16696,9 +16712,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &885235100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16933,9 +16949,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &885441175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17491,9 +17507,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &916651230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17728,9 +17744,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &921478071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17965,9 +17981,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &924380390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18202,9 +18218,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &936870960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18546,9 +18562,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &978442073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18783,9 +18799,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &989429746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19020,9 +19036,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1014227116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19393,9 +19409,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1018586520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19630,9 +19646,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1021704612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19867,9 +19883,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1025320867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20104,9 +20120,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1033817652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20416,9 +20432,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1072310218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20653,9 +20669,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1086624155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20894,7 +20910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 2
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
@@ -20943,6 +20959,7 @@ RectTransform:
   - {fileID: 328621263}
   - {fileID: 962014496}
   - {fileID: 1982688128}
+  - {fileID: 276424346}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -20994,9 +21011,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1100177040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21200,6 +21217,9 @@ GameObject:
   - component: {fileID: 1111788150}
   - component: {fileID: 1111788151}
   - component: {fileID: 1111788152}
+  - component: {fileID: 1111788153}
+  - component: {fileID: 1111788154}
+  - component: {fileID: 1111788155}
   m_Layer: 0
   m_Name: Neuron Manger
   m_TagString: Untagged
@@ -21280,15 +21300,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2154418b1acbc74f886dc375ce3eb6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  mousemoveSpeed: 9
   cameraTransform: {fileID: 2143839383}
-  mouseSensitivity: 0
-  xRotation: 0
+  moveSpeed: 3
   scrollSpeed: 2
   minY: 1
   maxY: 20
   smoothTime: 0.1
+  panSpeed: 0.05
+--- !u!114 &1111788153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111788145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42fd961625f9c4e449fb384a39d36dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1111788154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111788145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaae1e7d1236e3440a03ca152d207794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radialMenu: {fileID: 276424347}
+  key: 103
+  buttons: []
+  sprites: []
+--- !u!114 &1111788155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111788145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98ed906044abd542984011a41e50d69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1112355514
 GameObject:
   m_ObjectHideFlags: 0
@@ -21333,9 +21391,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1112355516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21570,9 +21628,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1119522205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21807,9 +21865,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1123370630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22044,9 +22102,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1142759782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22281,9 +22339,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1169506039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22518,9 +22576,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1176922875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22755,9 +22813,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1182003652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22992,9 +23050,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1211284086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23454,9 +23512,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1235202063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23691,9 +23749,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1257402615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23928,9 +23986,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1265900549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24165,9 +24223,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1290124329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24402,9 +24460,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1292807299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24639,9 +24697,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1296097266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24876,9 +24934,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1309016970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25113,9 +25171,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1314458811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25350,9 +25408,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1318645836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25587,9 +25645,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1333155519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25824,9 +25882,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1333721067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26017,6 +26075,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1584147174}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1338933701 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5824528922827529081, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+  m_PrefabInstance: {fileID: 1651615561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1338933703 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5846746666106276139, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+  m_PrefabInstance: {fileID: 1651615561}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338933701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1338933705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338933701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1338933703}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1359406551
 GameObject:
   m_ObjectHideFlags: 0
@@ -26061,9 +26179,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1359406553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26298,9 +26416,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1361314935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26733,9 +26851,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1411635866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26970,9 +27088,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1420987183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27207,9 +27325,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1421750762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27444,9 +27562,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1439290328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27681,9 +27799,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1445650116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27918,9 +28036,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1459962159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28155,9 +28273,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1485833598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28392,9 +28510,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1486792010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28629,9 +28747,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1508226885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28866,9 +28984,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1515067136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29103,9 +29221,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1525887197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29340,9 +29458,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1526778664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29577,9 +29695,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1537287287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29814,9 +29932,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1543229846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30051,9 +30169,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1547955292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30288,9 +30406,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1563252912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30525,9 +30643,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1578976282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31137,9 +31255,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1626815663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31374,9 +31492,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1638835524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31611,9 +31729,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1642851635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31848,9 +31966,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1644710024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32041,6 +32159,138 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1584147174}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1651615561
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1090682469}
+    m_Modifications:
+    - target: {fileID: 2519196408210662929, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: _mainType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519196408210662929, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: _appearanceType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519196408210662929, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: _appearanceEasing
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519196408210662929, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: _disappearanceEasing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222661838860100032, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672094687591133581, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      propertyPath: m_Name
+      value: Radial Menu Panel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5824528922827529081, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1338933705}
+  m_SourcePrefab: {fileID: 100100000, guid: 7a85c775ba5ae9341af51aff87849fcd, type: 3}
 --- !u!1 &1661121442
 GameObject:
   m_ObjectHideFlags: 0
@@ -32085,9 +32335,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1661121444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32456,9 +32706,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1662463839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32814,9 +33064,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1674155302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33051,9 +33301,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1681028425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33288,9 +33538,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1706833684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33525,9 +33775,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1716944633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33896,9 +34146,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1721930706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34133,9 +34383,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1735876233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34370,9 +34620,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1767373748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34607,9 +34857,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1789705212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34844,9 +35094,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1791486405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35081,9 +35331,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1804099865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35318,9 +35568,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1806850760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35555,9 +35805,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1816952328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35792,9 +36042,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1822966235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36029,9 +36279,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1827954242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36371,9 +36621,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1845020820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36608,9 +36858,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1850012962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36845,9 +37095,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1861061876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37082,9 +37332,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1872407851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37319,9 +37569,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1893359988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37556,9 +37806,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1906371518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37898,9 +38148,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1936561157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38135,9 +38385,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1944543502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38372,9 +38622,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1950650375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38730,9 +38980,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1960853518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39044,9 +39294,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1984411061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39281,9 +39531,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &1999380517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39518,9 +39768,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &2001473412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39755,9 +40005,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &2008465657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39992,9 +40242,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &2009102155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40229,9 +40479,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &2039050892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40466,9 +40716,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &2040009817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40703,9 +40953,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &2050208405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41088,9 +41338,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &2061868445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41325,9 +41575,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &2067469320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41562,9 +41812,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &2068055712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41799,9 +42049,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &2074208153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42036,9 +42286,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &2099144827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42273,9 +42523,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &2119418475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42510,9 +42760,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &2143372101
 MonoBehaviour:
   m_ObjectHideFlags: 0

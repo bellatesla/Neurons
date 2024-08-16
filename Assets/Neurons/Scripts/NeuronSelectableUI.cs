@@ -14,23 +14,26 @@ public class NeuronSelectableUI : MonoBehaviour
     private void OnMouseExit()
     {
         SetMouseExitNueron();
+        GlobalNeuronEvents.SetOnMouseExitNeuron(neuron);
     }
     
     private void OnMouseDrag()
     {
-        //begin drag
-        //add new connection
+        //begin drag        
         SetOnDragNeuron();
+        GlobalNeuronEvents.SetOnDragNeuron(neuron);
 
     }
     private void OnMouseUp()
     {
+        GlobalNeuronEvents.SetOnMouseUpNeuron(neuron);
         //drag is over
         if (NeuronUI.instance == null) return;
         NeuronUI.instance.SetOnMouseUpNeuron(neuron);
     }
     private void OnMouseDown()
     {
+        GlobalNeuronEvents.SetOnMouseDownNeuron(neuron);
         if (Input.GetMouseButtonDown(0))
         {
             SetSelectedNeuron();
@@ -45,23 +48,27 @@ public class NeuronSelectableUI : MonoBehaviour
     private void OnMouseOver()
     {
         SetOnMouseOverNeuron();
+        GlobalNeuronEvents.SetOnMouseOverNeuron(neuron);
     }
 
     private void SetOnDragNeuron()
     {
         if (NeuronUI.instance == null) return;
-        NeuronUI.instance.SetOnDragNeuron(neuron);
+        
+       
     }
     private void SetOnDragEndNeuron()
     {
         if (NeuronUI.instance == null) return;
         NeuronUI.instance.SetOnDragEndNeuron(neuron);
+       
     }
 
     private void SetMouseExitNueron()
     {
         if (NeuronUI.instance == null) return;
         NeuronUI.instance.SetMouseExitNeuron(neuron);
+        
     }
 
 
@@ -69,11 +76,13 @@ public class NeuronSelectableUI : MonoBehaviour
     {
         if (NeuronUI.instance == null) return;
             NeuronUI.instance.SetOnMouseOver(neuron);
+       
     }
 
     private void SetSelectedNeuron()
     {
         if (NeuronUI.instance == null) return;
             NeuronUI.instance.SetSelectedNeuron(neuron);
+        
     }
 }

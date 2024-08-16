@@ -9,6 +9,8 @@ public class Neuron : MonoBehaviour
     public List<Neuron> connections = new List<Neuron>();
     public Dictionary<Neuron, float> connectionStrengths = new Dictionary<Neuron, float>();
     public float voltage { get; private set; }//-1,1
+    public static System.Action<string> OnNeuronStateChange { get; internal set; }
+
     public float debug_voltage;    
     public int additionalConnections = 0;    
     public bool hasfireOnceOnStart;
@@ -16,16 +18,24 @@ public class Neuron : MonoBehaviour
     public event System.Action<Neuron> OnFired;
     public event System.Action<Neuron> OnReceived;    
     public event System.Action<NeuronType> OnTypeChanged;
-    public NeuronSettingsSO settings;   //manually assigned or is asssigned in prefab 
+   
     public float timeSinceLastSignal;
     float lastSignalReceivedTime;
     public float lastSignalValue;
+    
+    // Global settings
+    public NeuronSettingsSO settings;   //manually assigned or is asssigned in prefab 
+    // Global states
+    private GlobalNeuronEvents globalStateManager;
 
-    private void Start()
+    protected virtual void Start()
     {
+        globalStateManager = FindObjectOfType<GlobalNeuronEvents>();
+        globalStateManager.RegisterNeuron(this);
         //send event on start
         OnTypeChanged?.Invoke(neuronType);
     }
+
     protected virtual void Update()
     {
         debug_voltage = voltage;

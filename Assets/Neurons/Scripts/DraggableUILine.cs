@@ -5,18 +5,17 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-//place this script in the scene not on a neuron object
-public class NeuronUI : MonoBehaviour
+//place this script in the scene, not on a neuron object
+public class DraggableUILine : MonoBehaviour
 { 
     public Vector3 lineOffset;
-    public LineRenderer newConnectionLine;
+    public LineRenderer linePrefab;//premake to specs in editor and assign
     public RectTransform newLineConnectionIcon;
     internal Neuron selectedNueron;//the nueron we last clicked
     internal Neuron currentMouseOverNeuron;// current neuron the mouse is over
     internal Neuron highlightedNeuron;//the last neuron that the mouse was over
     
-    Camera mainCamera; 
-    public bool isDragging; 
+    Camera mainCamera;     
    
     void Start()
     {
@@ -34,30 +33,27 @@ public class NeuronUI : MonoBehaviour
         currentMouseOverNeuron = neuron;
     }
     private void SetOnMouseUpNeuron(Neuron neuron)
-    {
-        isDragging = false;
-        //adds a new connection if not our self
+    {        
+        //add a new connection if not our self
         if (!GameObject.Equals(currentMouseOverNeuron, selectedNueron))
         {
-            //print("Mouse Up - NOT the same object! ");
+            //print("Mouse Up, Can connect since - NOT the same object");
             if (currentMouseOverNeuron != null)
             {
                 AddConnection(selectedNueron, currentMouseOverNeuron);
             }
         }
         //turn off new line connection       
-        HideLine(newConnectionLine);
+        HideLine(linePrefab);
     }
     private void SetOnMouseDown(Neuron neuron)
     {
         selectedNueron = neuron;
     }
     private void SetOnDragNeuron(Neuron neuron)
-    {
-        isDragging = true;
+    {        
         selectedNueron = neuron;
         OnDragNewConnection();
-
     } 
     private void SetMouseExitNeuron(Neuron neuron)
     {
@@ -65,12 +61,12 @@ public class NeuronUI : MonoBehaviour
     }
     private void HideLine(LineRenderer line)
     {        
-        newConnectionLine.gameObject.SetActive(false);
+        linePrefab.gameObject.SetActive(false);
         newLineConnectionIcon.gameObject.SetActive(false);
     }
     private void ShowLine(LineRenderer line)
     {       
-        newConnectionLine.gameObject.SetActive(true);
+        linePrefab.gameObject.SetActive(true);
         newLineConnectionIcon.gameObject.SetActive(true);
     }
     private void AddConnection(Neuron from, Neuron to)
@@ -80,10 +76,10 @@ public class NeuronUI : MonoBehaviour
     }
     private void OnDragNewConnection()
     {        
-        ShowLine(newConnectionLine);
+        ShowLine(linePrefab);
 
-        // Start point        
-        newConnectionLine.SetPosition(0, selectedNueron.transform.position);
+        // Set start point        
+        linePrefab.SetPosition(0, selectedNueron.transform.position);
 
         var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -97,7 +93,7 @@ public class NeuronUI : MonoBehaviour
             if (GameObject.Equals(selectedNueron, currentMouseOverNeuron))
             {
                 //we are ourself
-                HideLine(newConnectionLine);
+                HideLine(linePrefab);
             }
             else
             {
@@ -107,17 +103,17 @@ public class NeuronUI : MonoBehaviour
                 }
             }
 
-            // End point 
-            newConnectionLine.SetPosition(1, target);
+            // Set end point 
+            linePrefab.SetPosition(1, target);
             Vector3 screenPos = mainCamera.WorldToScreenPoint(target);
-            // Icon
+            // Set icon
             newLineConnectionIcon.position = screenPos;
         }
         else
         {
-            //when no objects under mouse 
-            // If no hit, you can set the line to some default position or disable it
-            newConnectionLine.SetPosition(1, ray.GetPoint(10)); // Extend the line to some arbitrary distance
+            //when no objects hit under mouse 
+            // If no hit, you can set the line to a default dist or disable it
+            linePrefab.SetPosition(1, ray.GetPoint(10)); // Extend the line to some arbitrary distance
         }
     }
     

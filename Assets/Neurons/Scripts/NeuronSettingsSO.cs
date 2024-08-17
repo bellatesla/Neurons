@@ -19,11 +19,6 @@ public class NeuronSettingsSO : ScriptableObject
 
     public float removeConnectionThreshold = 0.01f;
 
-    [Header("Polarization Settings")]
-    public float polarizationTriggerDuration = 0.5f;// if two signals recieved within this time
-    public float depolarizationTriggerDuration = .1f;
-    //public Vector2 randomStartActivityThreshold = new Vector2(.5f, 1f);
-
     [Header("Neuron Growth Settings")]
     public float connectionAddRadius = 1;
     public int maxConnections = 3;

@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class RadialMenuToNeuron : MonoBehaviour
 {
-    
-    
     private void Start()
     {        
-        //UI Button Events
+        // UI radial button events
         RadialMenuController.OnFiredPositive += OnFiredPositiveButton;
         RadialMenuController.OnFiredNegative += OnFiredNegativeButton;
         RadialMenuController.OnInvert += OnInvertButton;
         RadialMenuController.OnRemoveConnection += OnRemoveConnectionButton;
         
+        // Neuron mouse events
         GlobalNeuronEvents.OnMouseOverNeuron += OnMouseOverNeuron;
         GlobalNeuronEvents.OnMouseOverNeuron += OnSelectedNeuron;
         GlobalNeuronEvents.OnMouseExitNeuron += OnMouseExitNeuron;

@@ -16,58 +16,56 @@ public class RadialMenuController : MonoBehaviour
     public static Action<Neuron> OnInvert;
     public static Action<Neuron> OnRemoveConnection;
 
-    public List<Button> buttons;
+    private List<Button> buttons;
    
     [Space]
-    public Sprite[] sprites;
-    protected Neuron lastOnMouseOverNeuron;//the last neuron that the mouse was over
-    private Neuron currentOnMouseOverNeuron;
-
+    public Sprite[] sprites;//assign manually in editor
+    protected Neuron lastOnMouseOverNeuron;//the last neuron that the mouse was over   
+    protected Neuron currentOnMouseOverNeuron;//the last neuron that the mouse was over   
     private void Start()
     {
         GlobalNeuronEvents.OnMouseOverNeuron += OnMouseOverNeuron;
-        //GlobalNeuronEvents.OnMouseExitNeuron += OnMouseExitNeuron;
-
-        //radialMenu.SetPieceImageSprites(sprites);
+        GlobalNeuronEvents.OnMouseExitNeuron += OnMouseExitNeuron;
+        // get buttons in radial menu
         buttons = radialMenu.GetComponentsInChildren<Button>().ToList();
        
-
+        // set button listeners
         for (int i = 0; i < buttons.Count; i++)
         {
             int index = i;//needed for lambda closure
             buttons[i].onClick.AddListener(() => ButtonClicked(index));
         }
 
-        //sprites
+        // set sprites
         for (int i = 0; i < sprites.Length; i++)
         {
             Sprite icon = sprites[i];
             buttons[i].GetComponent<Image>().sprite = icon;
         }
     }
-   
-    //private void Update()
-    //{
-    //    if (lastOnMouseOverNeuron != null)
-    //    {
-    //        UpdateMenuPosition();
-    //    }  
-    //}
+
+    private void OnMouseExitNeuron(Neuron obj)
+    {
+        currentOnMouseOverNeuron = null;
+    }
+
+    private void Update()
+    {
+        if (!radialMenu.mouseIsInsideRadius && !currentOnMouseOverNeuron)
+        {
+            //radialMenu.Hide();            
+        }
+    }
     private void ButtonClicked(int index)
     {
         print("Button returned: " + index);
         InvokeSelectedButton(index);
-    }
-    private void OnMouseExitNeuron(Neuron obj)
-    {    
-        //radialMenu.Hide();
-    }
+    }   
     private void OnMouseOverNeuron(Neuron neuron)
     {
-        radialMenu.Show();
-        //currentOnMouseOverNeuron = neuron;
+        currentOnMouseOverNeuron = neuron;
 
-        if (radialMenu.isInsideRadius && lastOnMouseOverNeuron) 
+        if (radialMenu.mouseIsInsideRadius && lastOnMouseOverNeuron) 
         {           
             //print("Mouse is inside menu");            
         }
@@ -75,8 +73,9 @@ public class RadialMenuController : MonoBehaviour
         {            
             lastOnMouseOverNeuron = neuron;
         }
-
+        radialMenu.Show();
         UpdateMenuPosition();
+
     } 
     private void UpdateMenuPosition()
     {
@@ -87,6 +86,11 @@ public class RadialMenuController : MonoBehaviour
         screenPos.z = 0;       
         rect.position = screenPos;
     }   
+    
+    /// <summary>
+    /// Selected index to proper button event
+    /// </summary>
+    /// <param name="selected"></param>
     private void InvokeSelectedButton(int selected)
     {
         if (selected == 0)

@@ -15,9 +15,11 @@ public class UIRadialMenu : MonoBehaviour
     [SerializeField] private float currentDistance;
     private HoverableUI hoverable;
     public float distanceThreshold = 60;
+    public int rotationOffsetDeg = 90;
+    [Range(0,360)]public float arcDegrees = 360f;
     public float debug_autoRadius;
     public bool isMouseOver => hoverable.isMouseOver;
-    public bool isInsideRadius => currentDistance < distanceThreshold;
+    public bool mouseIsInsideRadius => currentDistance < distanceThreshold;
 
     void Awake()
     {
@@ -80,13 +82,15 @@ public class UIRadialMenu : MonoBehaviour
         }
         elementPrefab.SetActive(false);
     }
-    private static Vector3 GetCircularPosition(int numberOfElements, float radius, int i)
+    private Vector3 GetCircularPosition(int numberOfElements, float radius, int i)
     {
+        // Calculate the base angle for this element based on the arc angle
+        float angle = i * Mathf.Deg2Rad * arcDegrees / (numberOfElements - 1);
         // Calculate the angle for this element
-        float angle = i * Mathf.PI * 2f / numberOfElements;
+        //float angle = i * Mathf.PI * 2f / numberOfElements;
         
         //rotate angle 90 as radians to make 0 on top
-        angle += Mathf.Deg2Rad * 90; //Mathf.PI/2f;
+        angle += Mathf.Deg2Rad * rotationOffsetDeg; //Mathf.PI/2f;
         
         // Calculate the position for this element
         Vector2 position = new Vector2(Mathf.Cos(angle) * radius, Mathf.Sin(angle) * radius);

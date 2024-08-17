@@ -234,7 +234,7 @@ public class Neuron : MonoBehaviour
             }
         }
     }
-    Neuron FindRandomNeuron()
+    private Neuron FindRandomNeuron()
     {
         //find neurons by radius
         Collider[] colliders = Physics.OverlapSphere(transform.position, settings.connectionAddRadius);
@@ -257,9 +257,7 @@ public class Neuron : MonoBehaviour
             return randomNeuron;
         }
         return null;
-    }
-    
-    
+    }       
     internal void Invert()
     {
         if (neuronType == NeuronType.Excitory)
@@ -274,7 +272,7 @@ public class Neuron : MonoBehaviour
             //OnDepolarized?.Invoke(this);
             OnTypeChanged?.Invoke(neuronType);
         }
-    }
+    }    
     
     void OnDrawGizmosSelected()
     {

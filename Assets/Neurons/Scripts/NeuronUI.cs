@@ -7,15 +7,7 @@ using System;
 
 //place this script in the scene not on a neuron object
 public class NeuronUI : MonoBehaviour
-{     
-    public static NeuronUI instance;//singleton
-
-    public Button hoverFireButtonPositive;
-    public Button hoverFireButtonNegative;
-    public Button hoverInvertButton;
-    public Button hoverRemoveButton;
-    public RectTransform buttonsPanel;
-    
+{ 
     public Vector3 lineOffset;
     public LineRenderer newConnectionLine;
     public RectTransform newLineConnectionIcon;
@@ -25,103 +17,68 @@ public class NeuronUI : MonoBehaviour
     
     Camera mainCamera; 
     public bool isDragging; 
-
-    void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(instance);
-        }
-    }
+   
     void Start()
     {
         mainCamera = Camera.main;
-
-        hoverFireButtonPositive.onClick.AddListener(OnClickedPositiveFireButton);
-        hoverFireButtonNegative.onClick.AddListener(OnClickedNegativeFireButton);
-        hoverInvertButton.onClick.AddListener(OnClickedInvertButton);
-        hoverRemoveButton.onClick.AddListener(OnClickedRemoveButton);       
+       
+        GlobalNeuronEvents.OnMouseOverNeuron += SetOnMouseOverNeuron;
+        GlobalNeuronEvents.OnMouseUpNeuron += SetOnMouseUpNeuron;
+        GlobalNeuronEvents.OnMouseDownNeuron += SetOnMouseDown;
+        GlobalNeuronEvents.OnDragNeuron += SetOnDragNeuron;        
+        GlobalNeuronEvents.OnMouseExitNeuron += SetMouseExitNeuron;
+       
     }
-
-    internal void SetOnDragEndNeuron(Neuron neuron)
+    private void SetOnMouseOverNeuron(Neuron neuron)
+    {       
+        currentMouseOverNeuron = neuron;
+    }
+    private void SetOnMouseUpNeuron(Neuron neuron)
     {
         isDragging = false;
-    }
-
-    void Update()
-    { 
-        if (highlightedNeuron != null)
+        //adds a new connection if not our self
+        if (!GameObject.Equals(currentMouseOverNeuron, selectedNueron))
         {
-            UpdateMouseOverUI();
+            //print("Mouse Up - NOT the same object! ");
+            if (currentMouseOverNeuron != null)
+            {
+                AddConnection(selectedNueron, currentMouseOverNeuron);
+            }
         }
+        //turn off new line connection       
+        HideLine(newConnectionLine);
     }
-    public void SetSelectedNeuron(Neuron neuron)
+    private void SetOnMouseDown(Neuron neuron)
     {
         selectedNueron = neuron;
-    }   
-    void UpdateMouseOverUI()
+    }
+    private void SetOnDragNeuron(Neuron neuron)
     {
-        Vector3 screenPos = mainCamera.WorldToScreenPoint(highlightedNeuron.transform.position);
-        screenPos.z = 0;
-        //screenPos.x += hudOffset.x;
-        //screenPos.y += hudOffset.y;
-        buttonsPanel.parent.position = screenPos;
-    }    
-    void HideLine(LineRenderer line)
+        isDragging = true;
+        selectedNueron = neuron;
+        OnDragNewConnection();
+
+    } 
+    private void SetMouseExitNeuron(Neuron neuron)
     {
-        buttonsPanel.gameObject.SetActive(true);
+        currentMouseOverNeuron = null;
+    }
+    private void HideLine(LineRenderer line)
+    {        
         newConnectionLine.gameObject.SetActive(false);
         newLineConnectionIcon.gameObject.SetActive(false);
     }
-    void ShowLine(LineRenderer line)
-    {
-        buttonsPanel.gameObject.SetActive(false);
+    private void ShowLine(LineRenderer line)
+    {       
         newConnectionLine.gameObject.SetActive(true);
         newLineConnectionIcon.gameObject.SetActive(true);
     }
-    void RemoveConnection(Neuron from, Neuron to)
-    {
-        from.connections.Remove(to);
-    }
-    void AddConnection(Neuron from, Neuron to)
+    private void AddConnection(Neuron from, Neuron to)
     {
         print("Adding new Connection! ");
         from.connections.Add(to);
-    }   
-    void FireNeuron(Neuron neuron, float voltage)
-    {
-        if (neuron == null) return;
-        neuron.ForceFire(voltage);
     }
-    public void OnClickedRemoveButton()
-    {
-        int count = highlightedNeuron.connections.Count;
-        if (count > 0)
-        {
-            //remove the last one n the list
-            RemoveConnection(highlightedNeuron, highlightedNeuron.connections[count - 1]);
-        }
-    }
-    public void OnClickedInvertButton()
-    {       
-        if (highlightedNeuron)
-        {
-            highlightedNeuron.Invert();
-        }
-    }
-    public void OnClickedPositiveFireButton()
-    {
-        FireNeuron(highlightedNeuron,1);
-    }
-    public void OnClickedNegativeFireButton()
-    {
-        FireNeuron(highlightedNeuron,-1);
-    }
-    void OnDragNewConnection()
+    private void OnDragNewConnection()
     {        
         ShowLine(newConnectionLine);
 
@@ -163,44 +120,7 @@ public class NeuronUI : MonoBehaviour
             newConnectionLine.SetPosition(1, ray.GetPoint(10)); // Extend the line to some arbitrary distance
         }
     }
-    internal void SetOnMouseUpNeuron(Neuron neuron)
-    {        
-        //adds a new connection if not our self
-        if (!GameObject.Equals(currentMouseOverNeuron, selectedNueron))
-        {
-            //print("Mouse Up - NOT the same object! ");
-            if (currentMouseOverNeuron != null)
-            {
-                AddConnection(selectedNueron, currentMouseOverNeuron);
-            }
-        }
-        //turn off new line connection       
-        HideLine(newConnectionLine);
-    }
-    internal void SetOnDragNeuron(Neuron neuron)
-    {
-        isDragging = true;
-        selectedNueron = neuron;
-        OnDragNewConnection();
-        
-    }
-    internal void SetMouseExitNeuron(Neuron neuron)
-    {      
-        currentMouseOverNeuron = null;        
-    }
-    internal void SetOnMouseOver(Neuron neuron)
-    {
-        //show HUD
-        currentMouseOverNeuron = neuron;
-        
-        // Keeps panel focused if the mouse is over it
-        if (buttonsPanel.parent.GetComponent<HoverableUI>().isMouseOver)
-        {
-            UpdateMouseOverUI();
-        }
-        else highlightedNeuron = neuron;
-
-        
-    }
+    
+   
    
 }

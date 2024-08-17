@@ -4,54 +4,53 @@ using UnityEngine;
 
 public class RadialMenuToNeuron : MonoBehaviour
 {
-    private Neuron selectedNueron;//the nueron we last clicked
-    private Neuron currentOnMouseOverNeuron;// current neuron the mouse is over
-    private Neuron lastOnMouseOverNeuron;//the last neuron that the mouse was over
+    
     
     private void Start()
     {        
+        //UI Button Events
         RadialMenuController.OnFiredPositive += OnFiredPositiveButton;
         RadialMenuController.OnFiredNegative += OnFiredNegativeButton;
         RadialMenuController.OnInvert += OnInvertButton;
         RadialMenuController.OnRemoveConnection += OnRemoveConnectionButton;
+        
         GlobalNeuronEvents.OnMouseOverNeuron += OnMouseOverNeuron;
         GlobalNeuronEvents.OnMouseOverNeuron += OnSelectedNeuron;
         GlobalNeuronEvents.OnMouseExitNeuron += OnMouseExitNeuron;
     }
-    private void OnRemoveConnectionButton()
+
+    private void OnFiredPositiveButton(Neuron neuron)
     {
-        int count = lastOnMouseOverNeuron.connections.Count;
+        neuron.ForceFire(1);
+    }
+    private void OnFiredNegativeButton(Neuron neuron)
+    {
+        neuron.ForceFire(-1);
+    }
+    private void OnInvertButton(Neuron neuron)
+    {
+        neuron.Invert();
+    }
+    private void OnRemoveConnectionButton(Neuron neuron)
+    {
+        int count = neuron.connections.Count;
         if (count > 0)
         {
-            lastOnMouseOverNeuron.connections.RemoveAt(count - 1);
+            neuron.connections.RemoveAt(count - 1);
+            //add remove last conn in neuron
         }
-    }
-    private void OnInvertButton()
-    {
-        lastOnMouseOverNeuron.Invert();
-    }
-
+    }    
     private void OnMouseExitNeuron(Neuron neuron)
     {
-        currentOnMouseOverNeuron = null;
+        //currentOnMouseOverNeuron = null;
     }
-
     void OnSelectedNeuron(Neuron neuron)
     {
-        selectedNueron = neuron;
+        //selectedNueron = neuron;
     }
     void OnMouseOverNeuron(Neuron neuron)
     {       
-        currentOnMouseOverNeuron = neuron;
-        lastOnMouseOverNeuron = neuron;
+       // currentOnMouseOverNeuron = neuron;       
     }
-    private void OnFiredPositiveButton()
-    {       
-        lastOnMouseOverNeuron.ForceFire(1);
-    }
-
-    private void OnFiredNegativeButton()
-    {        
-        lastOnMouseOverNeuron.ForceFire(-1);
-    }
+   
 }

@@ -13,12 +13,13 @@ public class GlobalNeuronEvents : MonoBehaviour
     //public static event Action<Neuron> OnNeuronFired;
 
     //neuron global events
+    //public static event Action<Neuron> OnClickedNeuron;
     public static event Action<Neuron> OnMouseOverNeuron;
     public static event Action<Neuron> OnMouseUpNeuron;
     public static event Action<Neuron> OnMouseDownNeuron;
     public static event Action<Neuron> OnMouseExitNeuron;
     public static event Action<Neuron> OnDragNeuron;
-    public static event Action<Neuron> OnDragEndNeuron;
+    //public static event Action<Neuron> OnDragEndNeuron;//none use mouse up
    
     //not used yet
     public void RegisterNeuron(Neuron neuron)
@@ -56,10 +57,7 @@ public class GlobalNeuronEvents : MonoBehaviour
     {
         OnDragNeuron?.Invoke(neuron);
     }
-    public static void SetOnDragEndNeuron(Neuron neuron)
-    {
-        OnDragEndNeuron?.Invoke(neuron);
-    }
+   
    
     
     public static void HandleNeuronStateChange(string state)

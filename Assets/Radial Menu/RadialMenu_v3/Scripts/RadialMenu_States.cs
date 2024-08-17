@@ -241,44 +241,44 @@ namespace Rito.RadialMenu_v3
 
             public override void Update()
             {
-                bool showArrow = false;
+                //bool showArrow = false;
 
-                // 마우스의 스크린 내 좌표(0.0 ~ 1.0 범위)
-                var mViewportPos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+                //// 마우스의 스크린 내 좌표(0.0 ~ 1.0 범위)
+                //var mViewportPos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
-                // 스크린의 중앙을 (0, 0)으로 하는 마우스 좌표(-0.5 ~ 0.5 범위)
-                var mPos = new Vector2(mViewportPos.x - 0.5f, mViewportPos.y - 0.5f);
+                //// 스크린의 중앙을 (0, 0)으로 하는 마우스 좌표(-0.5 ~ 0.5 범위)
+                //var mPos = new Vector2(mViewportPos.x - 0.5f, mViewportPos.y - 0.5f);
 
-                // 중심에서 마우스까지의 거리
-                var mDist = new Vector2(mPos.x * Screen.width / Screen.height, mPos.y).magnitude;
+                //// 중심에서 마우스까지의 거리
+                //var mDist = new Vector2(mPos.x * Screen.width / Screen.height, mPos.y).magnitude;
 
-                if (mDist < menu._centerRange)
-                {
-                    menu._selectedIndex = -1;
-                }
-                else
-                {
-                    // 마우스 위치의 직교 좌표를 시계 극좌표로 변환
-                    ClockwisePolarCoord mousePC = ClockwisePolarCoord.FromVector2(mPos);
+                //if (mDist < menu._centerRange)
+                //{
+                //    menu._selectedIndex = -1;
+                //}
+                //else
+                //{
+                //    // 마우스 위치의 직교 좌표를 시계 극좌표로 변환
+                //    ClockwisePolarCoord mousePC = ClockwisePolarCoord.FromVector2(mPos);
 
-                    // Arrow 회전 설정
-                    menu._arrowRotationZ = -mousePC.Angle;
-                    showArrow = true;
+                //    // Arrow 회전 설정
+                //    menu._arrowRotationZ = -mousePC.Angle;
+                //    showArrow = true;
 
-                    // 각도로부터 배열 인덱스 계산
-                    float fIndex = (mousePC.Angle / 360f) * menu._pieceCount;
-                    menu._selectedIndex = Mathf.RoundToInt(fIndex) % menu._pieceCount;
-                }
+                //    // 각도로부터 배열 인덱스 계산
+                //    float fIndex = (mousePC.Angle / 360f) * menu._pieceCount;
+                //    menu._selectedIndex = Mathf.RoundToInt(fIndex) % menu._pieceCount;
+                //}
 
                 // 화살표 회전
-                menu.SetArrow(showArrow);
+               // menu.SetArrow(showArrow);
 
                 // 선택 인덱스 변경
-                if (prevSelectedIndex != menu._selectedIndex)
-                    OnSelectedIndexChanged(prevSelectedIndex, menu._selectedIndex);
+                //if (prevSelectedIndex != menu._selectedIndex)
+                //    OnSelectedIndexChanged(prevSelectedIndex, menu._selectedIndex);
 
-                // 이전 인덱스 기억
-                prevSelectedIndex = menu._selectedIndex;
+                //// 이전 인덱스 기억
+                //prevSelectedIndex = menu._selectedIndex;
             }
 
             /// <summary> 선택된 인덱스 변경 </summary>

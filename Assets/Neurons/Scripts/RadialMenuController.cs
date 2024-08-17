@@ -1,4 +1,3 @@
-using Rito.RadialMenu_v3;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,94 +6,105 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class RadialMenuController : MonoBehaviour
-{
-    public RadialMenu radialMenu;
-    public KeyCode key = KeyCode.G;
+{    
+    public UIRadialMenu radialMenu;
+    public KeyCode testkey = KeyCode.G;
 
     //Menu Butttons
-    public static Action OnFiredPositive;
-    public static Action OnFiredNegative;
-    public static Action OnInvert;
-    public static Action OnRemoveConnection;
+    public static Action<Neuron> OnFiredPositive;
+    public static Action<Neuron> OnFiredNegative;
+    public static Action<Neuron> OnInvert;
+    public static Action<Neuron> OnRemoveConnection;
 
     public List<Button> buttons;
-
+   
     [Space]
     public Sprite[] sprites;
-
-    
+    protected Neuron lastOnMouseOverNeuron;//the last neuron that the mouse was over
+    private Neuron currentOnMouseOverNeuron;
 
     private void Start()
     {
         GlobalNeuronEvents.OnMouseOverNeuron += OnMouseOverNeuron;
         //GlobalNeuronEvents.OnMouseExitNeuron += OnMouseExitNeuron;
-        
-        radialMenu.SetPieceImageSprites(sprites);
+
+        //radialMenu.SetPieceImageSprites(sprites);
         buttons = radialMenu.GetComponentsInChildren<Button>().ToList();
+       
 
         for (int i = 0; i < buttons.Count; i++)
         {
-            Button button = buttons[i];
-            button.onClick.AddListener(OnButtonClicked);
+            int index = i;//needed for lambda closure
+            buttons[i].onClick.AddListener(() => ButtonClicked(index));
+        }
+
+        //sprites
+        for (int i = 0; i < sprites.Length; i++)
+        {
+            Sprite icon = sprites[i];
+            buttons[i].GetComponent<Image>().sprite = icon;
         }
     }
-
-    private void OnMouseExitNeuron(Neuron obj)
+   
+    //private void Update()
+    //{
+    //    if (lastOnMouseOverNeuron != null)
+    //    {
+    //        UpdateMenuPosition();
+    //    }  
+    //}
+    private void ButtonClicked(int index)
     {
-        radialMenu.Hide();
+        print("Button returned: " + index);
+        InvokeSelectedButton(index);
     }
-
+    private void OnMouseExitNeuron(Neuron obj)
+    {    
+        //radialMenu.Hide();
+    }
     private void OnMouseOverNeuron(Neuron neuron)
     {
         radialMenu.Show();
-        UpdateMenuPosition();
-    }
-    void UpdateMenuPosition()
-    {
-        var rect = radialMenu.GetComponent<RectTransform>();
-        //......
-    }
-    private void Update()
-    {
-        // if mouse if over neuron show
-        // get global mouse over neuron event
-        if (Input.GetKeyDown(key))
-        {
-            radialMenu.Show();
-        }
-        else if (Input.GetKeyUp(key))
-        {
-            int selected = radialMenu.Hide();
-            Debug.Log($"Selected : {selected}");
-        }
-    }
-    private void OnButtonClicked()
-    {
-        // The button index sent its used to call an event
-        int selected = radialMenu.selectedIndex;
-        InvokeSelectedButton(selected);
-        Debug.Log($"Selected : {selected}");
-    }
+        //currentOnMouseOverNeuron = neuron;
 
+        if (radialMenu.isInsideRadius && lastOnMouseOverNeuron) 
+        {           
+            //print("Mouse is inside menu");            
+        }
+        else
+        {            
+            lastOnMouseOverNeuron = neuron;
+        }
+
+        UpdateMenuPosition();
+    } 
+    private void UpdateMenuPosition()
+    {
+        if (lastOnMouseOverNeuron == null) return;
+
+        var rect = radialMenu.GetComponent<RectTransform>();
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(lastOnMouseOverNeuron.transform.position);
+        screenPos.z = 0;       
+        rect.position = screenPos;
+    }   
     private void InvokeSelectedButton(int selected)
     {
         if (selected == 0)
         {
-            OnFiredPositive?.Invoke();
+            OnFiredPositive?.Invoke(lastOnMouseOverNeuron);
         }
         else if (selected == 1)
         {
-            OnFiredNegative?.Invoke();
+            OnFiredNegative?.Invoke(lastOnMouseOverNeuron);
         }
         else if (selected == 2)
         {
-            OnInvert?.Invoke();
+            OnInvert?.Invoke(lastOnMouseOverNeuron);
         }
         else if (selected == 3)
         {
-            OnRemoveConnection?.Invoke();
+            OnRemoveConnection?.Invoke(lastOnMouseOverNeuron);
         }
     }
-
 
 }

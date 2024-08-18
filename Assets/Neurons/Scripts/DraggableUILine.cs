@@ -20,7 +20,8 @@ public class DraggableUILine : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main;
-       
+        linePrefab.gameObject.SetActive(false);
+
         GlobalNeuronEvents.OnMouseOverNeuron += SetOnMouseOverNeuron;
         GlobalNeuronEvents.OnMouseUpNeuron += SetOnMouseUpNeuron;
         GlobalNeuronEvents.OnMouseDownNeuron += SetOnMouseDown;
@@ -75,9 +76,13 @@ public class DraggableUILine : MonoBehaviour
         from.connections.Add(to);
     }
     private void OnDragNewConnection()
-    {        
+    {
         ShowLine(linePrefab);
+        SetLinePositions();
+    }
 
+    private void SetLinePositions()
+    {
         // Set start point        
         linePrefab.SetPosition(0, selectedNueron.transform.position);
 
@@ -110,13 +115,11 @@ public class DraggableUILine : MonoBehaviour
             newLineConnectionIcon.position = screenPos;
         }
         else
-        {
-            //when no objects hit under mouse 
+        {            
             // If no hit, you can set the line to a default dist or disable it
             linePrefab.SetPosition(1, ray.GetPoint(10)); // Extend the line to some arbitrary distance
         }
     }
-    
-   
-   
+
+
 }

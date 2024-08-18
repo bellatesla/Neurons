@@ -17,7 +17,7 @@ public class RadialMenuController : MonoBehaviour
     public static Action<Neuron> OnRemoveConnection;
     public static Action<Neuron> OnToggleInfoPanel;
     private List<Button> buttons;
-   
+    bool isDraggingCamera;
     [Space]
     //public Sprite[] sprites;//assign manually in editor
     protected Neuron lastOnMouseOverNeuron;//the last neuron that the mouse was over   
@@ -28,6 +28,8 @@ public class RadialMenuController : MonoBehaviour
     {
         GlobalNeuronEvents.OnMouseOverNeuron += OnMouseOverNeuron;
         GlobalNeuronEvents.OnMouseExitNeuron += OnMouseExitNeuron;
+        GlobalNeuronEvents.OnCameraDrag += OnCameraDragged;
+        GlobalNeuronEvents.OnCameraDragEnd += OnCameraDragEnd;
         // get buttons in radial menu
         buttons = radialMenu.GetComponentsInChildren<Button>().ToList();
        
@@ -36,14 +38,18 @@ public class RadialMenuController : MonoBehaviour
         {
             int index = i;//needed for lambda closure
             buttons[i].onClick.AddListener(() => ButtonClicked(index));
-        }
+        }        
+    }
 
-        //// set sprites
-        //for (int i = 0; i < sprites.Length; i++)
-        //{
-        //    Sprite icon = sprites[i];
-        //    buttons[i].GetComponent<Image>().sprite = icon;
-        //}
+    private void OnCameraDragEnd()
+    {
+        isDraggingCamera = false;
+    }
+   
+    private void OnCameraDragged()
+    {
+        isDraggingCamera = true;
+        radialMenu.Hide();
     }
 
     private void OnMouseExitNeuron(Neuron obj)
@@ -53,7 +59,12 @@ public class RadialMenuController : MonoBehaviour
 
     private void Update()
     {
-        //if (alwaysShow) return;
+        if (isDraggingCamera) 
+        {
+            radialMenu.Hide();
+            return;
+        }
+       
         if (!radialMenu.mouseIsInsideRadius && !currentOnMouseOverNeuron)
         {
             radialMenu.Hide();            

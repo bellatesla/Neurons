@@ -9,8 +9,10 @@ public class GlobalNeuronEvents : MonoBehaviour
     // ui butttons to be hooked up
 
     //Neurons that register can be given a global command
-    private List<Neuron> neurons = new List<Neuron>();    
-
+    private List<Neuron> neurons = new List<Neuron>();
+    
+    public static event Action OnCameraDrag;
+    public static event Action OnCameraDragEnd;
     //neuron events   
     public static event Action<Neuron> OnMouseOverNeuron;
     public static event Action<Neuron> OnMouseUpNeuron;
@@ -62,6 +64,16 @@ public class GlobalNeuronEvents : MonoBehaviour
     public static void HandleNeuronStateChange(string state)
     {
         // Process state change in the global system
+    }
+
+    // Camera Events
+    internal static void SetOnCameraDrag()
+    {
+        OnCameraDrag?.Invoke();
+    }
+    internal static void SetOnCameraDragEnd()
+    {
+        OnCameraDragEnd?.Invoke();
     }
 
     public void SetGlobalState(string state)

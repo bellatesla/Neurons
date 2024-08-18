@@ -70,9 +70,9 @@ public class Neuron : MonoBehaviour
     }  
     internal void StopFiring()
     {
-        StartCoroutine(Suffocate());
+        StartCoroutine(BlockSignals());
     }
-    private IEnumerator Suffocate()
+    private IEnumerator BlockSignals()
     {
         float duration = 5f;       // Total time to perform the action
         float elapsedTime = 0f;    // Track the elapsed time

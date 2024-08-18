@@ -31,10 +31,10 @@ public class NeuronCameraController : MonoBehaviour
     {
         UpdateKBMovement();
         MouseDrag();        
-        UpdateMouseScroll();
+        UpdateMouseZoom();
     }
 
-    void UpdateMouseScroll()
+    void UpdateMouseZoom()
     {
         // Get the scroll wheel input
         float scrollInput = Input.GetAxis("Mouse ScrollWheel");
@@ -54,11 +54,13 @@ public class NeuronCameraController : MonoBehaviour
         if (Input.GetMouseButtonDown(2))
         {
             isDragging = true;
+            GlobalNeuronEvents.SetOnCameraDrag();
             startDragPosition = Input.mousePosition;           
         }
 
         if (Input.GetMouseButtonUp(2))
         {
+            GlobalNeuronEvents.SetOnCameraDragEnd();
             isDragging = false;
         }
 

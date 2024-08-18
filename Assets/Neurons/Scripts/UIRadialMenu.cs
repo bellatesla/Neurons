@@ -31,15 +31,14 @@ public class UIRadialMenu : MonoBehaviour
         
     }
     void Update()
-    {        
-        CheckDistanceFromCenter();
-        MovePiecePosition();
-        //only required if you want adjust in playmode
-        if (!Application.isPlaying)
+    {   
+        //move only required if you want adjust in playmode
+        if (Application.isPlaying)
         {
-            
+            CheckDistanceFromCenter();
         }
-            
+        else MovePiecePosition();
+
     }
     private void CheckDistanceFromCenter()
     {
@@ -63,6 +62,7 @@ public class UIRadialMenu : MonoBehaviour
             pieceRects[i].anchoredPosition = center + position;
         }
     }
+    
     [ContextMenu("Delete Icons")]
     private void DeleteIcons()
     {
@@ -80,6 +80,7 @@ public class UIRadialMenu : MonoBehaviour
         }
         pieceRects = new List<RectTransform>();
     }
+    
     [ContextMenu("Spawn Icons")]
     private void SpawnIcons()
     {

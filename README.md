@@ -16,8 +16,7 @@ Welcome to the Neuron Simulation Project! This project simulates the activity of
 
 This project aims to simulate the behavior of neurons using a real-time 3D environment in Unity. Inspired by micro network motifs.
 
-<img src="images/circuit_motifs1.jpg" alt="Motif" width="500"/>
-
+<img src="images/motifs1.jpg" alt="Motif" width="500"/>
 
 ## Features
 

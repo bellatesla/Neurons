@@ -11,11 +11,21 @@ public class RadialMenuToNeuron : MonoBehaviour
         RadialMenuController.OnFiredNegative += OnFiredNegativeButton;
         RadialMenuController.OnInvert += OnInvertButton;
         RadialMenuController.OnRemoveConnection += OnRemoveConnectionButton;
-        
+        RadialMenuController.OnToggleInfoPanel += OnToggleInfoPanel;
+
         // Neuron mouse events
         GlobalNeuronEvents.OnMouseOverNeuron += OnMouseOverNeuron;
         GlobalNeuronEvents.OnMouseOverNeuron += OnSelectedNeuron;
         GlobalNeuronEvents.OnMouseExitNeuron += OnMouseExitNeuron;
+    }
+
+    private void OnToggleInfoPanel(Neuron neuron)
+    {
+        var panel = neuron.GetComponent<NeuronInfoPanel>();
+        if (panel)
+        {
+            panel.Toggle();
+        }
     }
 
     private void OnFiredPositiveButton(Neuron neuron)

@@ -21,12 +21,13 @@ public class Neuron : MonoBehaviour
    
     public float timeSinceLastSignal;
     float lastSignalReceivedTime;
-    public float lastSignalValue;
+    public float lastSignalValueIn;
     
     // Global settings
     public NeuronSettingsSO settings;   //manually assigned or is asssigned in prefab 
     // Global states
     private GlobalNeuronEvents globalStateManager;
+    private bool signalBlocked;
 
     protected virtual void Start()
     {
@@ -46,12 +47,15 @@ public class Neuron : MonoBehaviour
         AddNewConnections();        
     }
     void ReceiveSignal(float singnalInput)
-    {       
-
+    {
+        if (signalBlocked)
+        {
+            return;
+        }
         float duration = Time.time - lastSignalReceivedTime;
         timeSinceLastSignal = duration;
         lastSignalReceivedTime = Time.time;
-        lastSignalValue = singnalInput;
+        lastSignalValueIn = singnalInput;
         //voltage += signal * settings.signalActivityIncreaseAmount;
         voltage += singnalInput;
         //debug
@@ -62,12 +66,30 @@ public class Neuron : MonoBehaviour
     }   
     public void ForceFire(float value)
     {
-        ReceiveSignal(value);
-        //Bypasses ReceiveSignal(value) checks
-        //activityLevel = value;
-        //Fire();
-        //activityLevel = 0;        
-    }    
+        ReceiveSignal(value);             
+    }  
+    internal void StopFiring()
+    {
+        StartCoroutine(Suffocate());
+    }
+    private IEnumerator Suffocate()
+    {
+        float duration = 5f;       // Total time to perform the action
+        float elapsedTime = 0f;    // Track the elapsed time
+
+        // Perform the action for duration
+        while (elapsedTime < duration)
+        {    
+            elapsedTime += Time.deltaTime;
+            //force zero
+            signalBlocked = true;
+            
+            // Wait until the next frame
+            yield return null;
+        }
+        signalBlocked = false;
+    }
+
     private void CheckThresholdVoltage()
     { 
         if (neuronType == NeuronType.Excitory)

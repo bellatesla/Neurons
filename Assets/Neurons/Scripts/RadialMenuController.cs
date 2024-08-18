@@ -15,13 +15,15 @@ public class RadialMenuController : MonoBehaviour
     public static Action<Neuron> OnFiredNegative;
     public static Action<Neuron> OnInvert;
     public static Action<Neuron> OnRemoveConnection;
-
+    public static Action<Neuron> OnToggleInfoPanel;
     private List<Button> buttons;
    
     [Space]
-    public Sprite[] sprites;//assign manually in editor
+    //public Sprite[] sprites;//assign manually in editor
     protected Neuron lastOnMouseOverNeuron;//the last neuron that the mouse was over   
     protected Neuron currentOnMouseOverNeuron;//the last neuron that the mouse was over   
+    public bool alwaysShow;
+
     private void Start()
     {
         GlobalNeuronEvents.OnMouseOverNeuron += OnMouseOverNeuron;
@@ -36,12 +38,12 @@ public class RadialMenuController : MonoBehaviour
             buttons[i].onClick.AddListener(() => ButtonClicked(index));
         }
 
-        // set sprites
-        for (int i = 0; i < sprites.Length; i++)
-        {
-            Sprite icon = sprites[i];
-            buttons[i].GetComponent<Image>().sprite = icon;
-        }
+        //// set sprites
+        //for (int i = 0; i < sprites.Length; i++)
+        //{
+        //    Sprite icon = sprites[i];
+        //    buttons[i].GetComponent<Image>().sprite = icon;
+        //}
     }
 
     private void OnMouseExitNeuron(Neuron obj)
@@ -51,9 +53,10 @@ public class RadialMenuController : MonoBehaviour
 
     private void Update()
     {
+        //if (alwaysShow) return;
         if (!radialMenu.mouseIsInsideRadius && !currentOnMouseOverNeuron)
         {
-            //radialMenu.Hide();            
+            radialMenu.Hide();            
         }
     }
     private void ButtonClicked(int index)
@@ -108,6 +111,10 @@ public class RadialMenuController : MonoBehaviour
         else if (selected == 3)
         {
             OnRemoveConnection?.Invoke(lastOnMouseOverNeuron);
+        }
+        else if (selected == 4)
+        {
+            OnToggleInfoPanel?.Invoke(lastOnMouseOverNeuron);
         }
     }
 

@@ -6,22 +6,21 @@ using UnityEngine;
 public class GlobalNeuronEvents : MonoBehaviour
 {
     //UI interface
-    // list of ui butttons that need to be hooked up
+    // ui butttons to be hooked up
 
     //Neurons that register can be given a global command
-    private List<Neuron> neurons = new List<Neuron>();
-    //public static event Action<Neuron> OnNeuronFired;
+    private List<Neuron> neurons = new List<Neuron>();    
 
-    //neuron global events
-    //public static event Action<Neuron> OnClickedNeuron;
+    //neuron events   
     public static event Action<Neuron> OnMouseOverNeuron;
     public static event Action<Neuron> OnMouseUpNeuron;
     public static event Action<Neuron> OnMouseDownNeuron;
     public static event Action<Neuron> OnMouseExitNeuron;
     public static event Action<Neuron> OnDragNeuron;
     //public static event Action<Neuron> OnDragEndNeuron;//none use mouse up
-   
-    //not used yet
+    //public static event Action<Neuron> OnClickedNeuron;//none use on down
+
+
     public void RegisterNeuron(Neuron neuron)
     {
         neurons.Add(neuron);
@@ -77,7 +76,21 @@ public class GlobalNeuronEvents : MonoBehaviour
     {
         foreach (Neuron neuron in neurons)
         {
-            //neuron.StopFiring();
+            neuron.StopFiring();
+        }
+    }
+    public void FireAllNeurons()
+    {
+        foreach (Neuron neuron in neurons)
+        {
+            neuron.ForceFire(1);
+        }
+    }
+    public void DisconnectAllNeurons()
+    {
+        foreach (Neuron neuron in neurons)
+        {
+            neuron.connections = new List<Neuron>();
         }
     }
 }

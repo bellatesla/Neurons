@@ -4,64 +4,88 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+[ExecuteInEditMode]
 public class UIRadialMenu : MonoBehaviour
 {
-    [SerializeField] private List<Image> _pieceImages;
-    [SerializeField] private List<RectTransform> _pieceRects;
-    [SerializeField] private GameObject _pieceSample;
-    [SerializeField] private int _pieceCount;
-    [SerializeField] private int _radius = 200;
+   
+    [SerializeField] private List<RectTransform> pieceRects;
+    [SerializeField] private GameObject pieceSample;
+    [SerializeField] private int pieceCount;
+    [SerializeField] private int radius = 200;
     [SerializeField] private float currentDistance;
-    private HoverableUI hoverable;
+    
     public float distanceThreshold = 60;
     public int rotationOffsetDeg = 90;
-    [Range(0,360)]public float arcDegrees = 360f;
+    [Range(0,360)]public float arcDegrees = 360f;//if using semi circle
     public float debug_autoRadius;
-    public bool isMouseOver => hoverable.isMouseOver;
+   
     public bool mouseIsInsideRadius => currentDistance < distanceThreshold;
 
-    void Awake()
+    void Start()
     {
-        hoverable = gameObject.AddComponent<HoverableUI>();
-        SpawnElements(_pieceSample, _pieceCount, _radius);
-        Hide();
+        //SpawnElements(_pieceSample, _pieceCount, _radius);
+        if (Application.isPlaying)
+        {
+            Hide();
+        }
+        
     }
     void Update()
-    {
-        
+    {        
         CheckDistanceFromCenter();
         MovePiecePosition();
-        
+        //only required if you want adjust in playmode
+        if (!Application.isPlaying)
+        {
+            
+        }
+            
     }
-
     private void CheckDistanceFromCenter()
     {
         var rect = GetComponent<RectTransform>();
         currentDistance = Vector2.Distance(rect.position, Input.mousePosition);        
     }
-
     public void Show()
     {
-        ShowGameObject();
+        gameObject.SetActive(true);
     }
     public void Hide()
     {
-        HideGameObject();       
+        gameObject.SetActive(false);
     }
     private void MovePiecePosition()
     {
-        for (int i = 0; i < _pieceRects.Count; i++)
+        for (int i = 0; i < pieceRects.Count; i++)
         {
             var center = Vector3.zero;
-            Vector3 position = GetCircularPosition(_pieceCount, _radius, i);
-            _pieceRects[i].anchoredPosition = center + position;
+            Vector3 position = GetCircularPosition(pieceCount, radius, i);
+            pieceRects[i].anchoredPosition = center + position;
         }
+    }
+    [ContextMenu("Delete Icons")]
+    private void DeleteIcons()
+    {
+        foreach (var item in pieceRects)
+        {
+            if (Application.isPlaying)
+            {
+                Destroy(item.gameObject);
+            }
+            else
+            {
+                DestroyImmediate(item.gameObject);
+            }
 
-        //auto find correct threshold radius
-        var rect = GetComponent<RectTransform>();
-        debug_autoRadius = Vector2.Distance( rect.position, _pieceRects[0].position);
-    } 
+        }
+        pieceRects = new List<RectTransform>();
+    }
+    [ContextMenu("Spawn Icons")]
+    private void SpawnIcons()
+    {
+        DeleteIcons();
+        SpawnElements(pieceSample, pieceCount, radius);
+    }
     private void SpawnElements(GameObject elementPrefab, int numberOfElements, float radius)
     {
         elementPrefab.SetActive(true);
@@ -78,16 +102,16 @@ public class UIRadialMenu : MonoBehaviour
             // Set the position relative to the center point
             var rect = newElement.GetComponent<RectTransform>();
             rect.anchoredPosition = center + position;
-            _pieceRects.Add(rect);
+            pieceRects.Add(rect);
         }
         elementPrefab.SetActive(false);
     }
     private Vector3 GetCircularPosition(int numberOfElements, float radius, int i)
     {
         // Calculate the base angle for this element based on the arc angle
-        float angle = i * Mathf.Deg2Rad * arcDegrees / (numberOfElements - 1);
+        float angle = i * Mathf.Deg2Rad * arcDegrees / (numberOfElements - 1);//semi-circle
         // Calculate the angle for this element
-        //float angle = i * Mathf.PI * 2f / numberOfElements;
+        //float angle = i * Mathf.PI * 2f / numberOfElements;//full circle
         
         //rotate angle 90 as radians to make 0 on top
         angle += Mathf.Deg2Rad * rotationOffsetDeg; //Mathf.PI/2f;
@@ -97,14 +121,7 @@ public class UIRadialMenu : MonoBehaviour
         //uses negative on the x position to rotate in opposite direction
         return new Vector3(-position.x, position.y, 0);
     }   
-    private void ShowGameObject()
-    {
-        gameObject.SetActive(true);
-    }
-    private void HideGameObject()
-    {
-        gameObject.SetActive(false);
-    }
+    
 
 }
 

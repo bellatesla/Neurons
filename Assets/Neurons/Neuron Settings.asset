@@ -52,3 +52,4 @@ MonoBehaviour:
   particleEffectsPrefab: {fileID: 5757198090248239405, guid: 53a0bbc05c79c14498ff8a4943e645e0, type: 3}
   particleSize: 0.48
   scaleStrength: 0.04
+  infoPanelOffset: {x: 0, y: 0.19, z: 0}

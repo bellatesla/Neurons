@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 264961870026671271}
   - component: {fileID: 4436212353076066956}
   - component: {fileID: 1119007591530127326}
+  - component: {fileID: -6756041726100761570}
   m_Layer: 1
   m_Name: Neuron
   m_TagString: Untagged
@@ -111,7 +112,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.6
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2370729481056649377
 MonoBehaviour:
@@ -130,9 +131,9 @@ MonoBehaviour:
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
   timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &2122123061293159294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,3 +238,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17d1368886e44948a3af8fc5d3438d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6756041726100761570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659191178105008307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c1792170f159b4eb563ecd1a04d567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoPanelPrefab: {fileID: 7904024959572599929, guid: 23ce139ae7a749f45acaaaf68bc544f5, type: 3}
+  infoPanel: {fileID: 0}
+  textComponent: {fileID: 0}

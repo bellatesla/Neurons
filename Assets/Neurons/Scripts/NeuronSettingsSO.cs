@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NeuronSettings", menuName = "Neurons/Neuron Settings", order = 1)]
 public class NeuronSettingsSO : ScriptableObject
 {
+    // todo public NeuronSettings 
     [Header("Neuron Signal Settings")]
     public float signalSpeed = 1;//how fast the signal travels down the connections
     public float signalActivityDecayDuration = .1f;//how fast the signal decays in the neuron
@@ -26,31 +27,20 @@ public class NeuronSettingsSO : ScriptableObject
     [Header("Effects Settings")]
 
     [Header("Colors Settings")]
-    public EffectColors neuronColors;
-    //public Color positiveColor = new Color(1, 0, 0, 1);//red
-    //public Color negativeColor = new Color(0, 1, 0, 1);//green
-    //public Color inactiveColor = new Color(1, 1, 1, 1);//white
-    //public Color inactiveColor2 = new Color(0, 0, 0, 1);//black
-
+    public EffectColors neuronColors; 
     public float emission = 1;
-
     public float signalColorActivityDecayDuration = .3f;//how fast the signal decays in the neuron
 
     // line settings
     public LineSettings lineSettings;
-
-    //public float lineWidthMax = .2f;
-    //public float lineWidthMin = .01f;
-    //public float lineWidthScale = .1f;
-
-    //public Color linePositiveColor = new Color(1, 0, 0, 1);//red
-    //public Color lineNegativeColor = new Color(0, 1, 0, 1);//green
-    //public Color lineInactiveColor = new Color(1, 1, 1, 1);//white
-    //public float lineColorActivityDecayDuration = 1.0f;//how fast the signal decays in the neuron
 
     [Header("Particle Effects")]
     public EffectColors particleColors;
     public GameObject particleEffectsPrefab;
     public float particleSize = .2f;
     public float scaleStrength = 1;
+    
+    [Header("UI Panels")]
+    public Vector3 infoPanelOffset;
+    internal int infoPaneltextSpeed=1;
 }

@@ -9,6 +9,8 @@ public class Neuron : MonoBehaviour
     public List<Neuron> connections = new List<Neuron>();
     public Dictionary<Neuron, float> connectionStrengths = new Dictionary<Neuron, float>();
     public float voltage { get; private set; }//-1,1
+    public static System.Action<string> OnNeuronStateChange { get; internal set; }
+
     public float debug_voltage;    
     public int additionalConnections = 0;    
     public bool hasfireOnceOnStart;
@@ -16,16 +18,25 @@ public class Neuron : MonoBehaviour
     public event System.Action<Neuron> OnFired;
     public event System.Action<Neuron> OnReceived;    
     public event System.Action<NeuronType> OnTypeChanged;
-    public NeuronSettingsSO settings;   //manually assigned or is asssigned in prefab 
+   
     public float timeSinceLastSignal;
     float lastSignalReceivedTime;
-    public float lastSignalValue;
+    public float lastSignalValueIn;
+    
+    // Global settings
+    public NeuronSettingsSO settings;   //manually assigned or is asssigned in prefab 
+    // Global states
+    private GlobalNeuronEvents globalStateManager;
+    private bool signalBlocked;
 
-    private void Start()
+    protected virtual void Start()
     {
+        globalStateManager = FindObjectOfType<GlobalNeuronEvents>();
+        globalStateManager.RegisterNeuron(this);
         //send event on start
         OnTypeChanged?.Invoke(neuronType);
     }
+
     protected virtual void Update()
     {
         debug_voltage = voltage;
@@ -36,12 +47,15 @@ public class Neuron : MonoBehaviour
         AddNewConnections();        
     }
     void ReceiveSignal(float singnalInput)
-    {       
-
+    {
+        if (signalBlocked)
+        {
+            return;
+        }
         float duration = Time.time - lastSignalReceivedTime;
         timeSinceLastSignal = duration;
         lastSignalReceivedTime = Time.time;
-        lastSignalValue = singnalInput;
+        lastSignalValueIn = singnalInput;
         //voltage += signal * settings.signalActivityIncreaseAmount;
         voltage += singnalInput;
         //debug
@@ -52,12 +66,30 @@ public class Neuron : MonoBehaviour
     }   
     public void ForceFire(float value)
     {
-        ReceiveSignal(value);
-        //Bypasses ReceiveSignal(value) checks
-        //activityLevel = value;
-        //Fire();
-        //activityLevel = 0;        
-    }    
+        ReceiveSignal(value);             
+    }  
+    internal void StopFiring()
+    {
+        StartCoroutine(BlockSignals());
+    }
+    private IEnumerator BlockSignals()
+    {
+        float duration = 5f;       // Total time to perform the action
+        float elapsedTime = 0f;    // Track the elapsed time
+
+        // Perform the action for duration
+        while (elapsedTime < duration)
+        {    
+            elapsedTime += Time.deltaTime;
+            //force zero
+            signalBlocked = true;
+            
+            // Wait until the next frame
+            yield return null;
+        }
+        signalBlocked = false;
+    }
+
     private void CheckThresholdVoltage()
     { 
         if (neuronType == NeuronType.Excitory)
@@ -224,7 +256,7 @@ public class Neuron : MonoBehaviour
             }
         }
     }
-    Neuron FindRandomNeuron()
+    private Neuron FindRandomNeuron()
     {
         //find neurons by radius
         Collider[] colliders = Physics.OverlapSphere(transform.position, settings.connectionAddRadius);
@@ -247,9 +279,7 @@ public class Neuron : MonoBehaviour
             return randomNeuron;
         }
         return null;
-    }
-    
-    
+    }       
     internal void Invert()
     {
         if (neuronType == NeuronType.Excitory)
@@ -264,7 +294,7 @@ public class Neuron : MonoBehaviour
             //OnDepolarized?.Invoke(this);
             OnTypeChanged?.Invoke(neuronType);
         }
-    }
+    }    
     
     void OnDrawGizmosSelected()
     {

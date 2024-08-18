@@ -40,7 +40,7 @@ public class SaveSystem : MonoBehaviour
     }    
 
     [ContextMenu("Load Game State")]
-    void Load()
+    public void Load()
     {
         IDToObjectDictionary = new Dictionary<int, GameObject>();
         DataContainer saveData = LoadFromFile();

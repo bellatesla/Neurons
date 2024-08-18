@@ -13,44 +13,43 @@ MonoBehaviour:
   m_Name: Neuron Settings
   m_EditorClassIdentifier: 
   signalSpeed: 2
-  signalActivityDecayDuration: 10
-  signalActivityIncreaseAmount: 0.108
+  signalActivityDecayDuration: 5
+  signalActivityIncreaseAmount: 1
   firingThresold: 1
   connectionStrengthenRate: 0.1
   connectionWeakenRate: 0
   connectionStrengthMax: 1
-  connectionStrengthDefault: 0.5
+  connectionStrengthDefault: 1
   removeConnectionThreshold: 0.05
-  polarizationTriggerDuration: 0.02
-  depolarizationTriggerDuration: 0.09
   connectionAddRadius: 2.22
-  maxConnections: 2
+  maxConnections: 0
   neuronColors:
-    PositiveColor: {r: 0.019392133, g: 1, b: 0, a: 1}
-    NegativeColor: {r: 1, g: 0.114379376, b: 0, a: 1}
-    inactivePositiveColor: {r: 0.24077858, g: 0.65723264, b: 0.29069823, a: 1}
-    inactiveNegativeColor: {r: 0.52201253, g: 0.07304889, b: 0.07304889, a: 1}
-  emission: 1.5
-  signalColorActivityDecayDuration: 0.5
+    PositiveColor: {r: 1, g: 0, b: 0.65225697, a: 1}
+    NegativeColor: {r: 0, g: 0.46310234, b: 1, a: 1}
+    inactivePositiveColor: {r: 0.6506086, g: 0.39231044, b: 0.9559748, a: 1}
+    inactiveNegativeColor: {r: 0.21568626, g: 0.30552584, b: 0.62352943, a: 1}
+  emission: 1.62
+  signalColorActivityDecayDuration: 0.79
   lineSettings:
-    lineDecayDuration: 0.3
-    lineWidthMin: 0.25
-    lineWidthMax: 0.76
+    lineDecayDuration: 1.48
+    lineWidthMin: 0.22
+    lineWidthMax: 0.26
     lineStartWidth: 0.5
     lineEndWidth: 0.5
-    lineWidthScale: 0.21
+    lineWidthScale: 0.4
     effectColors:
-      PositiveColor: {r: 0.016545534, g: 1, b: 0, a: 0.38431373}
-      NegativeColor: {r: 1, g: 0.16113281, b: 0, a: 0.7607843}
-      inactivePositiveColor: {r: 0.025092926, g: 0.5503144, b: 0.054373216, a: 0.0627451}
-      inactiveNegativeColor: {r: 0.6383647, g: 0.20776963, b: 0.20776963, a: 0.09411765}
-    emission: 0
+      PositiveColor: {r: 0.032800496, g: 0, b: 0.9496855, a: 0.38431373}
+      NegativeColor: {r: 0, g: 0.42562675, b: 1, a: 0.7607843}
+      inactivePositiveColor: {r: 0.9482741, g: 0.20392154, b: 0.99215686, a: 0.27450982}
+      inactiveNegativeColor: {r: 0, g: 0.5868423, b: 0.81446534, a: 0.7764706}
+    emission: 0.29
     baseLineMaterial: {fileID: 2100000, guid: 5c853e35386ef3847bff64d622380e93, type: 2}
   particleColors:
-    PositiveColor: {r: 0, g: 1, b: 0.027100086, a: 1}
-    NegativeColor: {r: 1, g: 0.013473766, b: 0, a: 1}
-    inactivePositiveColor: {r: 0.023529425, g: 0.68235296, b: 0.055175167, a: 1}
+    PositiveColor: {r: 0.8962264, g: 0.38751927, b: 0.7217911, a: 0.9019608}
+    NegativeColor: {r: 0, g: 0.606081, b: 1, a: 1}
+    inactivePositiveColor: {r: 0.0110061765, g: 1, b: 0.058101177, a: 1}
     inactiveNegativeColor: {r: 0.60062885, g: 0.076495185, b: 0.076495185, a: 1}
   particleEffectsPrefab: {fileID: 5757198090248239405, guid: 53a0bbc05c79c14498ff8a4943e645e0, type: 3}
-  particleSize: 0.61
-  scaleStrength: 0.05
+  particleSize: 0.48
+  scaleStrength: 0.04
+  infoPanelOffset: {x: 0, y: 0.19, z: 0}

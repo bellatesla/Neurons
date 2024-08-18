@@ -4,38 +4,37 @@ using UnityEngine;
 
 public class NeuronCameraController : MonoBehaviour
 {
-    public float moveSpeed = 1;
+    // keyboard
     public Transform cameraTransform;
-    public float mouseSensitivity = 1;
-    public float xRotation;
-
+    public float moveSpeed = 1;   
+   
+    // scroll wheel zoom
     public float scrollSpeed = 10f; // Speed of zooming
-    public float minY = 10f; // Minimum y position (zoomed out)
+    public float minY = 20; // Minimum y position (zoomed out)
     public float maxY = 100f; // Maximum y position (zoomed in)
-    public float smoothTime = 0.3f; // Time to smooth the camera movement
-
-    
+    public float smoothTime = 0.3f; // Time to smooth the camera zoom movement                                   
     private float _currentY;
     private float _targetY;
+    // pan drag
+    public float panSpeed = 5;
+    bool isDragging;
+    Vector3 startDragPosition;
+  
+   
     void Start()
     {
-        //Cursor.lockState = CursorLockMode.Confined;
-        //Cursor.lockState = CursorLockMode.Confined;
-        //Cursor.visible = true;
         cameraTransform = Camera.main.transform;
-        xRotation = cameraTransform.localEulerAngles.x;
         _currentY = cameraTransform.position.y;
         _targetY = _currentY; // Initialize targetY to current position
     }    
     void Update()
     {
-        UpdateMovement();
-        UpdateLookRotation();
-        UpdateMouseScroll();
-
+        UpdateKBMovement();
+        MouseDrag();        
+        UpdateMouseZoom();
     }
 
-    void UpdateMouseScroll()
+    void UpdateMouseZoom()
     {
         // Get the scroll wheel input
         float scrollInput = Input.GetAxis("Mouse ScrollWheel");
@@ -48,9 +47,47 @@ public class NeuronCameraController : MonoBehaviour
 
         // Update the camera's position
         cameraTransform.position = new Vector3(cameraTransform.position.x, _currentY, cameraTransform.position.z);
-    }
-    void UpdateMovement()
+    }   
+    void MouseDrag()
     {
+
+        if (Input.GetMouseButtonDown(2))
+        {
+            isDragging = true;
+            GlobalNeuronEvents.SetOnCameraDrag();
+            startDragPosition = Input.mousePosition;           
+        }
+
+        if (Input.GetMouseButtonUp(2))
+        {
+            GlobalNeuronEvents.SetOnCameraDragEnd();
+            isDragging = false;
+        }
+
+        if (isDragging)
+        {           
+            var delta = startDragPosition - Input.mousePosition;
+            
+            // Get the distance from the camera to the ground 
+            float distanceToGround = cameraTransform.position.y; 
+
+            // Adjust delta based on distance
+            delta *= panSpeed * distanceToGround * Time.deltaTime;
+
+            var currentPos = cameraTransform.position;
+            currentPos.x += delta.x;
+            currentPos.z += delta.y;
+            
+            cameraTransform.position = currentPos;
+            startDragPosition = Input.mousePosition; 
+        }
+       
+
+
+    }
+    void UpdateKBMovement()
+    {
+        //keyboard movement
         Vector3 input = Vector3.zero;
         //arrows to camera world x,z
         var h = Input.GetAxis("Horizontal");
@@ -63,18 +100,6 @@ public class NeuronCameraController : MonoBehaviour
 
         cameraTransform.Translate(moveSpeed * Time.deltaTime * movementDirection, Space.World);
     }
-    void UpdateLookRotation()
-    {
-        // Get the mouse input
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-
-        // Adjust the vertical rotation (pitch)
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f); // Clamp to prevent over-rotation
-
-        // Rotate the camera around the X-axis (up and down) and Y-axis (left and right)
-        cameraTransform.localRotation = Quaternion.Euler(xRotation, cameraTransform.localRotation.eulerAngles.y + mouseX, 0f);
-    }
+   
     
 }

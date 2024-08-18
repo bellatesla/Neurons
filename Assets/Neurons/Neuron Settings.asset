@@ -19,7 +19,7 @@ MonoBehaviour:
   connectionStrengthenRate: 0.1
   connectionWeakenRate: 0
   connectionStrengthMax: 1
-  connectionStrengthDefault: 0.5
+  connectionStrengthDefault: 1
   removeConnectionThreshold: 0.05
   connectionAddRadius: 2.22
   maxConnections: 0
@@ -36,7 +36,7 @@ MonoBehaviour:
     lineWidthMax: 0.26
     lineStartWidth: 0.5
     lineEndWidth: 0.5
-    lineWidthScale: 0.82
+    lineWidthScale: 0.4
     effectColors:
       PositiveColor: {r: 0.032800496, g: 0, b: 0.9496855, a: 0.38431373}
       NegativeColor: {r: 0, g: 0.42562675, b: 1, a: 0.7607843}

@@ -12,18 +12,15 @@ public class UIRadialMenu : MonoBehaviour
     [SerializeField] private GameObject pieceSample;
     [SerializeField] private int pieceCount;
     [SerializeField] private int radius = 200;
-    [SerializeField] private float currentDistance;
-    
-    public float distanceThreshold = 60;
     public int rotationOffsetDeg = 90;
-    [Range(0,360)]public float arcDegrees = 360f;//if using semi circle
-    public float debug_autoRadius;
-   
+    [Range(0, 360)] public float arcDegrees = 360f;//if using semi circle
+
+    [SerializeField] private float currentDistance;
+    [SerializeField] private float distanceThreshold = 100; 
     public bool mouseIsInsideRadius => currentDistance < distanceThreshold;
 
     void Start()
-    {
-        //SpawnElements(_pieceSample, _pieceCount, _radius);
+    {        
         if (Application.isPlaying)
         {
             Hide();
@@ -42,8 +39,16 @@ public class UIRadialMenu : MonoBehaviour
     }
     private void CheckDistanceFromCenter()
     {
-        var rect = GetComponent<RectTransform>();
-        currentDistance = Vector2.Distance(rect.position, Input.mousePosition);        
+        var rect = GetComponent<RectTransform>();      
+       
+        Vector2 localMousePosition;
+
+        // Convert the mouse position to local space relative to the RectTransform
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(rect, Input.mousePosition, null, out localMousePosition);
+
+        // Calculate the distance from the center using the local position
+        currentDistance = localMousePosition.magnitude;
+
     }
     public void Show()
     {

@@ -14,26 +14,21 @@ Welcome to the Neuron Simulation Project! This project simulates the activity of
 
 ## Introduction
 
-This project aims to simulate the behavior of neurons using a real-time 3D environment in Unity. It provides an interactive experience where users can see how neurons communicate and change over time, demonstrating principles of neuroplasticity.
+This project aims to simulate the behavior of neurons using a real-time 3D environment in Unity. Inspired by micro network motifs.
+
+<img src="images/circuit_motifs1.jpg" alt="Motif" width="300"/>
+
 
 ## Features
 
 - **Real-time Visualization**: Watch neurons communicate and change their activity levels.
-- **Customizable Settings**: Adjust the simulation parameters such as neuron sensitivity and connection strength.
+- **Customizable Settings**: Adjust the many simulation parameters such as neuron sensitivity and voltage threshold.
 - **Event-Driven Design**: Modular approach using events for clean and maintainable code.
+- **Save System**: Saves the current state of the simulation.
 - **Particle System Visualization**: Visualize neuron activity and spike paths using particles.
 
-**Neuron Settings**
 
-<img src="images/neuron_settings1.png" alt="Neuron Settings" width="400"/>
 
-**Effect Settings**
-
-<img src="images/neuron_settings2.png" alt="Neuron Settings" width="400"/>
-
-To add instructions for setting up Newtonsoft.Json and JsonSubTypes to your README, you can update it with the following section:
-
----
 
 ## Installation
 
@@ -72,6 +67,11 @@ To add instructions for setting up Newtonsoft.Json and JsonSubTypes to your READ
 2. **Customize Settings:**
    - Access the `NeuronManager` to adjust simulation parameters.
    - Use the UI to start, pause, or reset the simulation.
+
+<img src="images/neuron_settings1.png" alt="Neuron Settings" width="300"/>
+
+
+<img src="images/neuron_settings2.png" alt="Neuron Settings" width="300"/>
 
 3. **Saving and Loading:**
    - Use the save/load buttons in the UI to store and retrieve simulation states.

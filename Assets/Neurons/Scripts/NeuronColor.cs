@@ -61,7 +61,7 @@ public class NeuronColor : MonoBehaviour
     {
         // not--Neuron can change to any color deppending on it's current activity voltage signalActivity;
         // currently Neuron cannnot change to any color deppending on it's current activity voltage signalActivity;
-        if (signal < 0)
+        if (signal <= 0)
         {            
             if (neuron.neuronType == NeuronType.Inhibitory)
             {
@@ -96,8 +96,8 @@ public class NeuronColor : MonoBehaviour
 
     private void SetPositiveColors(float value)
     {
-        Color positiveColor = Color.Lerp(settings.neuronColors.inactivePositiveColor, settings.neuronColors.inactivePositiveColor, value);
-        Color emissiveColor = Color.Lerp(settings.neuronColors.inactivePositiveColor, settings.neuronColors.inactivePositiveColor * Mathf.GammaToLinearSpace(settings.emission), value);
+        Color positiveColor = Color.Lerp(settings.neuronColors.inactivePositiveColor, settings.neuronColors.PositiveColor, value);
+        Color emissiveColor = Color.Lerp(settings.neuronColors.inactivePositiveColor, settings.neuronColors.PositiveColor * Mathf.GammaToLinearSpace(settings.emission), value);
         material.SetColor("_EmissionColor", emissiveColor);
         material.color = positiveColor;
     }

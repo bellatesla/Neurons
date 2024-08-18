@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 264961870026671271}
   - component: {fileID: 4436212353076066956}
   - component: {fileID: 1119007591530127326}
+  - component: {fileID: -6756041726100761570}
   m_Layer: 1
   m_Name: Neuron
   m_TagString: Untagged
@@ -34,13 +35,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659191178105008307}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8301684349759567763
 MeshFilter:
@@ -100,10 +101,18 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659191178105008307}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.97
+  serializedVersion: 3
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2370729481056649377
 MonoBehaviour:
@@ -118,14 +127,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neuronType: 0
-  functionType: 6
   connections: []
   debug_voltage: 0
   additionalConnections: 0
   hasfireOnceOnStart: 0
-  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
-  lastSignalReceivedDuration: 0
+  timeSinceLastSignal: 0
   lastSignalValue: 0
+  settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
 --- !u!114 &2122123061293159294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,9 +180,11 @@ MonoBehaviour:
     lineStartWidth: 1
     lineEndWidth: 0.5
     lineWidthScale: 1
-    linePositiveColor: {r: 1, g: 0, b: 0, a: 1}
-    lineNegativeColor: {r: 0, g: 1, b: 0, a: 1}
-    lineInactiveColor: {r: 1, g: 1, b: 1, a: 1}
+    effectColors:
+      PositiveColor: {r: 1, g: 0, b: 0, a: 1}
+      NegativeColor: {r: 0, g: 1, b: 0, a: 1}
+      inactivePositiveColor: {r: 1, g: 1, b: 1, a: 1}
+      inactiveNegativeColor: {r: 1, g: 1, b: 1, a: 1}
     emission: 0
     baseLineMaterial: {fileID: 2100000, guid: 4e868a8053d7226458d81ad70d17eaa3, type: 2}
   overrideGlobalLineSettins: 0
@@ -228,5 +238,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17d1368886e44948a3af8fc5d3438d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
-  position: {x: 0, y: 0, z: 0}
+--- !u!114 &-6756041726100761570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659191178105008307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c1792170f159b4eb563ecd1a04d567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoPanelPrefab: {fileID: 7904024959572599929, guid: 23ce139ae7a749f45acaaaf68bc544f5, type: 3}
+  infoPanel: {fileID: 0}
+  textComponent: {fileID: 0}

@@ -10,7 +10,7 @@ public class SaveableNeuron : Saveable
     {
         get
         {
-            if (_neuron==null)
+            if (_neuron == null)
             {
                 _neuron = GetComponent<Neuron>();
             }

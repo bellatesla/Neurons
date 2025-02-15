@@ -42628,6 +42628,7 @@ MonoBehaviour:
   inhibitoryPercent: 0.4
   seed: 18
   settings: {fileID: 11400000, guid: 0c1fd8cdd931bac41bbad935172e96c6, type: 2}
+  showConnectionRadius: 0
 --- !u!4 &1584147174
 Transform:
   m_ObjectHideFlags: 0
@@ -56353,11 +56354,10 @@ MonoBehaviour:
   pieceSample: {fileID: 1060519070}
   pieceCount: 5
   radius: 115
-  currentDistance: 891.6633
-  distanceThreshold: 170
   rotationOffsetDeg: 170
   arcDegrees: 200
-  debug_autoRadius: 0
+  currentDistance: 891.6633
+  distanceThreshold: 170
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

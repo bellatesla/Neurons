@@ -19,6 +19,10 @@ public class NeuronInfoPanel : MonoBehaviour
     {
         neuron = GetComponent<Neuron>();        
     }
+    private void Start()
+    {
+        Show();
+    }
 
     private void OnEnable()
     {
@@ -41,8 +45,8 @@ public class NeuronInfoPanel : MonoBehaviour
         if (infoPanel && infoPanel.gameObject.activeSelf)
         {
             // Interpolate smoothActivity toward zero
-            float t = 1 / neuron.settings.infoPaneltextSpeed * Time.deltaTime;
-            smoothedVoltage = Mathf.Lerp(smoothedVoltage, 0, t);
+            float t = 1.0f / neuron.settings.infoPanelTextSpeed * Time.deltaTime;
+            smoothedVoltage = Mathf.Lerp(smoothedVoltage, neuron.voltage, t);
 
             //smoothedVoltage = Mathf.Lerp(targetVoltage, 0, speed * Time.deltaTime);
             var text = smoothedVoltage.ToString("F01") +"v";
@@ -80,6 +84,8 @@ public class NeuronInfoPanel : MonoBehaviour
     private void SpawnPanel()
     {
         infoPanel = Instantiate(infoPanelPrefab);
+        infoPanel.transform.SetParent(this.transform);
+
         infoPanel.transform.position = transform.position + neuron.settings.infoPanelOffset;        
         textComponent = infoPanel.GetComponentInChildren<TMPro.TMP_Text>();
     }

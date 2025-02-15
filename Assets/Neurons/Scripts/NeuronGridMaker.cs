@@ -11,6 +11,8 @@ public class NeuronGridMaker : MonoBehaviour
     public float inhibitoryPercent = .5f;
     public int seed;
     public NeuronSettingsSO settings;
+
+
     [ContextMenu("Update Neuron Grid")]
     void RespawnNeurons()
     {
@@ -18,6 +20,8 @@ public class NeuronGridMaker : MonoBehaviour
         DeleteNeurons();
         CreateNeuronGrid();
     }
+
+
     [ContextMenu("Delete Grid")]
     void DeleteNeurons()
     {
@@ -31,6 +35,7 @@ public class NeuronGridMaker : MonoBehaviour
         }
         neurons = new List<Neuron>();
     }
+
 
     [ContextMenu("Create Grid")]
     void CreateNeuronGrid()
@@ -60,8 +65,10 @@ public class NeuronGridMaker : MonoBehaviour
             }
         }
     }
+    public bool showConnectionRadius;
     private void OnDrawGizmosSelected()
     {
+        if (!showConnectionRadius) return;
         //draw box
         var center = transform.position;
         var _size = Vector3.Scale(size, spacing);

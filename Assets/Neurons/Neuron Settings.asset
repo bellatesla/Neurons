@@ -12,44 +12,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c5936bc39e23342bc0828550081583, type: 3}
   m_Name: Neuron Settings
   m_EditorClassIdentifier: 
-  signalSpeed: 2
-  signalActivityDecayDuration: 5
+  inhibitoryFiresOnPositive: 1
+  inhibitoryFiresOnNegative: 1
+  firedCooldownDuration: 0.3
+  signalSpeed: 1
+  signalActivityDecayDuration: 1
   signalActivityIncreaseAmount: 1
-  firingThresold: 1
+  firingThresold: 0.9
   connectionStrengthenRate: 0.1
-  connectionWeakenRate: 0
-  connectionStrengthMax: 1
+  connectionWeakenRate: 0.001
+  connectionStrengthMax: 10
   connectionStrengthDefault: 1
   removeConnectionThreshold: 0.05
-  connectionAddRadius: 2.22
-  maxConnections: 0
+  connectionAddRadius: 2
+  maxConnections: 1
   neuronColors:
-    PositiveColor: {r: 1, g: 0, b: 0.65225697, a: 1}
-    NegativeColor: {r: 0, g: 0.46310234, b: 1, a: 1}
-    inactivePositiveColor: {r: 0.6506086, g: 0.39231044, b: 0.9559748, a: 1}
-    inactiveNegativeColor: {r: 0.21568626, g: 0.30552584, b: 0.62352943, a: 1}
-  emission: 1.62
-  signalColorActivityDecayDuration: 0.79
+    PositiveColor: {r: 0.08505694, g: 0.9169811, b: 0.005190384, a: 1}
+    NegativeColor: {r: 0.85490197, g: 0.110218406, b: 0.090196066, a: 1}
+    inactivePositiveColor: {r: 0.031512074, g: 0.3735848, b: 0.024670642, a: 1}
+    inactiveNegativeColor: {r: 0.4188679, g: 0.15271795, b: 0.14778922, a: 1}
+  emission: 1.3
+  signalColorActivityDecayDuration: 5
   lineSettings:
     lineDecayDuration: 1.48
     lineWidthMin: 0.22
-    lineWidthMax: 0.26
-    lineStartWidth: 0.5
+    lineWidthMax: 0.14
+    lineStartWidth: 1.56
     lineEndWidth: 0.5
-    lineWidthScale: 0.4
+    lineWidthScale: 0.13
     effectColors:
-      PositiveColor: {r: 0.032800496, g: 0, b: 0.9496855, a: 0.38431373}
-      NegativeColor: {r: 0, g: 0.42562675, b: 1, a: 0.7607843}
-      inactivePositiveColor: {r: 0.9482741, g: 0.20392154, b: 0.99215686, a: 0.27450982}
-      inactiveNegativeColor: {r: 0, g: 0.5868423, b: 0.81446534, a: 0.7764706}
+      PositiveColor: {r: 0.07611133, g: 0.9490196, b: 0, a: 0.38431373}
+      NegativeColor: {r: 1, g: 0.04789734, b: 0, a: 0.7607843}
+      inactivePositiveColor: {r: 0.128608, g: 0.3056603, b: 0.128608, a: 0.27450982}
+      inactiveNegativeColor: {r: 0.2603773, g: 0.051791105, b: 0.044706285, a: 0.7764706}
     emission: 0.29
     baseLineMaterial: {fileID: 2100000, guid: 5c853e35386ef3847bff64d622380e93, type: 2}
   particleColors:
-    PositiveColor: {r: 0.8962264, g: 0.38751927, b: 0.7217911, a: 0.9019608}
-    NegativeColor: {r: 0, g: 0.606081, b: 1, a: 1}
-    inactivePositiveColor: {r: 0.0110061765, g: 1, b: 0.058101177, a: 1}
-    inactiveNegativeColor: {r: 0.60062885, g: 0.076495185, b: 0.076495185, a: 1}
+    PositiveColor: {r: 0.10382187, g: 0.6392157, b: 0.05098039, a: 0.9019608}
+    NegativeColor: {r: 1, g: 0.09836731, b: 0, a: 1}
+    inactivePositiveColor: {r: 0.3494268, g: 0.645283, b: 0.36351523, a: 1}
+    inactiveNegativeColor: {r: 0.4415095, g: 0.22242081, b: 0.22242081, a: 1}
   particleEffectsPrefab: {fileID: 5757198090248239405, guid: 53a0bbc05c79c14498ff8a4943e645e0, type: 3}
-  particleSize: 0.48
-  scaleStrength: 0.04
-  infoPanelOffset: {x: 0, y: 0.19, z: 0}
+  particleSize: 0.24
+  scaleStrength: 0
+  infoPanelOffset: {x: 0, y: 0.3, z: 0}
+  infoPanelTextSpeed: 1

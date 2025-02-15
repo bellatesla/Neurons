@@ -116,7 +116,7 @@ public class SaveSystem : MonoBehaviour
 
         print("Wait for spawned objects initialization");
         yield return null;
-        
+        yield return null;
         //Post-load state all saveables
         foreach (var saveable in saveables)
         {

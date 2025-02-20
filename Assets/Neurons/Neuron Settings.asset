@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Neuron Settings
   m_EditorClassIdentifier: 
   inhibitoryFiresOnPositive: 1
-  inhibitoryFiresOnNegative: 1
+  inhibitoryFiresOnNegative: 0
   firedCooldownDuration: 0.3
   signalSpeed: 1
   signalActivityDecayDuration: 1

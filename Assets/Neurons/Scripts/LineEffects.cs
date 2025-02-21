@@ -5,24 +5,31 @@ using UnityEngine;
 [RequireComponent(typeof(Neuron))]
 public class LineEffects : NeuronEffect
 {
-    public LineSettings lineSettings;
-    public bool overrideGlobalLineSettins;
+    //public LineSettings lineSettings;
+    //public bool overrideGlobalLineSettins;
 
-    protected List<LineRenderer> connectionLines = new List<LineRenderer>();    
+    protected List<LineRenderer> connectionLines = new List<LineRenderer>();
+
+    private void Start()
+    {
+        effectsType = EffectsType.Lines;
+    }
 
     void Update()
     {
-        float t = 1 / LineSettings().lineDecayDuration * Time.deltaTime;
-        smoothActivity = Mathf.Lerp(smoothActivity, 0, t);
+        smoothActivity = Mathf.Lerp(smoothActivity, neuron.voltage, 1f/neuron.settings.lineSettings.lineDecayDuration * Time.deltaTime);
 
         UpdateConnectionColors(smoothActivity);
+
         TurnOffUnsedLines();
     }    
+    
     protected override void OnFired(Neuron neuron)
     {
         base.OnFired(neuron);
         UpdateConnectionColors(smoothActivity);
     }
+    
     void UpdateConnectionColors(float value)
     {
         for (int i = 0; i < neuron.connections.Count; i++)
@@ -60,6 +67,7 @@ public class LineEffects : NeuronEffect
             }
         }
     }
+    
     private void TurnOffUnsedLines()
     {
         // Turn off lines that lose connection -- simple pooling
@@ -75,6 +83,7 @@ public class LineEffects : NeuronEffect
             }
         }
     }
+    
     LineRenderer GetLineRenderer(int index, Neuron connection)
     {
         if (index >= connectionLines.Count)
@@ -93,12 +102,13 @@ public class LineEffects : NeuronEffect
         
         return connectionLines[index];
     }
+    
     LineSettings LineSettings()
     {
-        if (overrideGlobalLineSettins)
-        {
-            return lineSettings;
-        }
+        //if (overrideGlobalLineSettins)
+        //{
+        //    return lineSettings;
+        //}
 
         return neuron.settings.lineSettings;
     }

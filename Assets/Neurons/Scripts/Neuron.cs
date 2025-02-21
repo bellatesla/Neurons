@@ -10,8 +10,7 @@ public class Neuron : MonoBehaviour
     public Dictionary<Neuron, float> connectionStrengths = new Dictionary<Neuron, float>();
     public float voltage { get; private set; }//-1,1
     public static System.Action<string> OnNeuronStateChange { get; internal set; }
-
-    public float debug_voltage;    
+          
     public int additionalConnections = 0;    
     public bool hasfireOnceOnStart;
 
@@ -22,59 +21,81 @@ public class Neuron : MonoBehaviour
     public float timeSinceLastSignal;
     float lastSignalReceivedTime;
     public float lastSignalValueIn;
-    
+    public float lastFiringTime;
+
     // Global settings
     public NeuronSettingsSO settings;   //manually assigned or is asssigned in prefab 
     // Global states
     private GlobalNeuronEvents globalStateManager;
+    
     private bool signalBlocked;
-
+    public static int connectionsCreated;
+   
+    
     protected virtual void Start()
     {
-        globalStateManager = FindObjectOfType<GlobalNeuronEvents>();
-        globalStateManager.RegisterNeuron(this);
         //send event on start
         OnTypeChanged?.Invoke(neuronType);
     }
 
+
+    private void OnEnable()
+    {
+        globalStateManager = FindObjectOfType<GlobalNeuronEvents>();
+        globalStateManager.RegisterNeuron(this);
+    }
+
+
+    private void OnDisable()
+    {       
+        globalStateManager.UnRegisterNeuron(this);
+    }
+
+
     protected virtual void Update()
     {
-        debug_voltage = voltage;
+        //debug_voltage = voltage;
         CheckThresholdVoltage();
         DecayVoltage();        
         DecayConnectionStrengths();
         RemoveWeakConnections();
         AddNewConnections();        
     }
-    void ReceiveSignal(float singnalInput)
+
+
+    void ReceiveSignal(float input)
     {
         if (signalBlocked)
         {
             return;
         }
-        float duration = Time.time - lastSignalReceivedTime;
-        timeSinceLastSignal = duration;
+        
+        timeSinceLastSignal = Time.time - lastSignalReceivedTime;
         lastSignalReceivedTime = Time.time;
-        lastSignalValueIn = singnalInput;
-        //voltage += signal * settings.signalActivityIncreaseAmount;
-        voltage += singnalInput;
-        //debug
-        debug_voltage = voltage;
+        lastSignalValueIn = input;
+       
+        voltage += input;       
         
         OnReceived?.Invoke(this);
         
     }   
+
+
     public void ForceFire(float value)
     {
         ReceiveSignal(value);             
     }  
+
+
     internal void StopFiring()
     {
-        StartCoroutine(BlockSignals());
-    }
-    private IEnumerator BlockSignals()
+        StartCoroutine(BlockSignalsOverTime(5));
+    }   
+    
+
+    private IEnumerator BlockSignalsOverTime(float duration)
     {
-        float duration = 5f;       // Total time to perform the action
+        //float duration = 5f;       // Total time to perform the action
         float elapsedTime = 0f;    // Track the elapsed time
 
         // Perform the action for duration
@@ -89,44 +110,42 @@ public class Neuron : MonoBehaviour
         }
         signalBlocked = false;
     }
-
+   
     private void CheckThresholdVoltage()
     { 
+        // Fires neuron if threshold is reached
+
         if (neuronType == NeuronType.Excitory)
         {
-            //this allows firing on either -1 or 1 activity
+            //fires on positive voltage
             if (voltage >= settings.firingThresold)
-            {
-                //if (GetCanFire())
-                //{
-                //    print($"Can fire excite was true. Test firing!{voltage}");
-                //}
-                //bool canFire = GetCanFire(voltage);
-
+            {              
                 Fire();                
-                voltage = 0;
             }
         }
-        if (neuronType == NeuronType.Inhibitory)
+        else // Inhibitory
         {
-            //In
-            // in + or - adds to current voltage can fire on either threshold + or -,
-            // fires out negative only on positive
-            if (voltage >= settings.firingThresold)
+            //fires on positive voltage
+            if (voltage >= settings.firingThresold && settings.inhibitoryFiresOnPositive)
             {
-                // Fires on an incoming positive and outputs a negative
+                // fire a negative voltage as inhibitor
                 if (voltage > 0) voltage *= -1;
-                //print($"Fired Inhibitory{voltage}");
                 Fire();
-                voltage = 0;
             }
-            //else a negative voltage will just get more negative and not fire but inhibit firing on self
+
+            //fires on negative voltage
+            if (voltage <= -settings.firingThresold && settings.inhibitoryFiresOnNegative)
+            {                
+                Fire();
+            }
+            
         }
 
     }   
+   
     private void DecayVoltage()
     {
-        float decayAmount = 1 / settings.signalActivityDecayDuration * Time.deltaTime;
+        float decayAmount = 1.0f/settings.signalActivityDecayDuration * Time.deltaTime;
 
         if (voltage > 0)
         {
@@ -137,13 +156,26 @@ public class Neuron : MonoBehaviour
         {
             voltage += decayAmount;
             voltage = Mathf.Clamp(voltage, -1, 0);
-
         }
-    }   
+    }
+   
     protected void Fire()
     {
+        // Supress firing if we are within cooldown time
+        if((Time.time - lastFiringTime ) < settings.firedCooldownDuration)
+        {            
+            voltage = 0;
+            return;
+        }
+
+
         foreach (var connection in connections)
         {
+            if (connection == null)
+            {
+                return;
+            }
+
             // Ensure the connection strength entry exists
             if (!connectionStrengths.ContainsKey(connection))
             {                
@@ -157,43 +189,25 @@ public class Neuron : MonoBehaviour
             {
                 connectionStrengths[connection] = settings.connectionStrengthMax;
             }
-            if (connection == null)
-            {
-                return;
-            }
+
+          
+
             var dist = Vector3.Distance(transform.position, connection.transform.position);
             var delay = dist / settings.signalSpeed;
             
-            float signalOut = Mathf.Clamp(voltage, -1.0f, 1.0f);
-
-            //if(neuronType == NeuronType.Inhibitory)
-            //{ 
-            //    // make neg
-            //    if (signalOut > 0) 
-            //    { 
-            //        signalOut *= -1;
-            //    }
-            //    print("Fired inhib " + signalOut.ToString("f02"));
-
-            //}
-            //else
-            //{
-            //    if (signalOut < 0)
-            //    {
-            //        signalOut *= -1;
-            //    }
-            //    print("Fired! Excit:" + signalOut.ToString("f02"));
-            //}
-            //print("Fired! Signal Out:" + signalOut.ToString("f02"));
+            float signalOut = Mathf.Clamp(voltage, -1.0f, 1.0f);            
 
             OnFired?.Invoke(this);
 
             // A delay for the receivng neuron to account for the transmission speed
-            SendDelayedSignal(connection, signalOut, delay);
-           
+            SendDelayedSignal(connection, signalOut, delay);            
 
         }
-    }    
+        // has fired, reset
+        voltage = 0;
+        lastFiringTime = Time.time;
+    }      
+
     private void SendDelayedSignal(Neuron neuron,float signal, float delay)
     {
         //Restrict to directly being called
@@ -205,6 +219,7 @@ public class Neuron : MonoBehaviour
 
         StartCoroutine(SendSignalDelay(neuron, signal, delay));
     }    
+   
     private void RemoveWeakConnections()
     {        
         // Example: Prune weak connections
@@ -224,28 +239,44 @@ public class Neuron : MonoBehaviour
 
         foreach (var neuron in toRemove)
         {
-            print("Removing connection");
+            print("Removing connection");            
             connections.Remove(neuron);
             connectionStrengths.Remove(neuron);
         }
     }
+    
     private void AddNewConnections()
     {
         // Example: Add new connections if below connection amount
         if (connections.Count < settings.maxConnections + additionalConnections) // Arbitrary max connections
         {
 
-            Neuron randomNeuron = FindRandomNeuron();
+            Neuron randomNeuron = null;
+
+            // Creates a distant connection
+            //1 of 10 should be a random multiple of the range
+            if (connectionsCreated % 10 == 0)
+            {
+                randomNeuron = FindDistantRandomNeuron(settings.connectionAddRadius * 5);
+                print($"Added Distant Connection. Connections Total: {connectionsCreated} ");
+            }
+            else
+            {
+                randomNeuron = FindRandomNeuron();//near by distance
+            }
+
+           
 
             if (randomNeuron != null && !connections.Contains(randomNeuron))
             {
                 //print("Adding connection");
-
+                connectionsCreated++;
                 connections.Add(randomNeuron);
                 connectionStrengths[randomNeuron] = settings.connectionStrengthDefault;// Initialize connection strength
             }
         }
     }
+    
     private void DecayConnectionStrengths()
     {
         foreach (var connection in connections)
@@ -256,6 +287,37 @@ public class Neuron : MonoBehaviour
             }
         }
     }
+
+    private Neuron FindDistantRandomNeuron(float radius) 
+    {
+        //find neurons by bigger radius
+        Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
+        List<Neuron> allNeurons = new List<Neuron>();
+
+        foreach (var collider in colliders)
+        {
+            var n = collider.GetComponent<Neuron>();
+            //if we are distant and not null
+            if (n && Vector3.Distance(transform.position, n.transform.position) > settings.connectionAddRadius)
+            {
+                allNeurons.Add(n);
+            }
+        }
+
+        if (allNeurons.Count > 1)
+        {
+            Neuron randomNeuron = this;
+            while (randomNeuron == this)
+            {
+                randomNeuron = allNeurons[Random.Range(0, allNeurons.Count)];
+            }
+
+            return randomNeuron;
+        }
+        return null;
+
+    }
+
     private Neuron FindRandomNeuron()
     {
         //find neurons by radius
@@ -280,6 +342,7 @@ public class Neuron : MonoBehaviour
         }
         return null;
     }       
+    
     internal void Invert()
     {
         if (neuronType == NeuronType.Excitory)

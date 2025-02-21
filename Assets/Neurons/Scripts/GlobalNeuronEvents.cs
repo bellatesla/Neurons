@@ -9,7 +9,7 @@ public class GlobalNeuronEvents : MonoBehaviour
     // ui butttons to be hooked up
 
     //Neurons that register can be given a global command
-    private List<Neuron> neurons = new List<Neuron>();
+    public List<Neuron> neurons = new List<Neuron>();
     
     public static event Action OnCameraDrag;
     public static event Action OnCameraDragEnd;
@@ -22,7 +22,10 @@ public class GlobalNeuronEvents : MonoBehaviour
     //public static event Action<Neuron> OnDragEndNeuron;//none use mouse up
     //public static event Action<Neuron> OnClickedNeuron;//none use on down
 
-
+    public void UnRegisterNeuron(Neuron neuron)
+    {
+        neurons.Remove(neuron);
+    }
     public void RegisterNeuron(Neuron neuron)
     {
         neurons.Add(neuron);
@@ -86,6 +89,9 @@ public class GlobalNeuronEvents : MonoBehaviour
 
     public void StopAllNeurons()
     {
+        //remove null neurons
+        neurons.RemoveAll(item => item == null);
+
         foreach (Neuron neuron in neurons)
         {
             neuron.StopFiring();

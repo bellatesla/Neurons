@@ -11,13 +11,18 @@ public class NeuronInfoPanel : MonoBehaviour
 {
     public GameObject infoPanelPrefab;
     private GameObject infoPanel;
-    private TMPro.TMP_Text textComponent;
+    private TMPro.TMP_Text voltageText;
+   
     Neuron neuron;
     float smoothedVoltage;
     
     private void Awake()
     {
         neuron = GetComponent<Neuron>();        
+    }
+    private void Start()
+    {
+        Show();
     }
 
     private void OnEnable()
@@ -40,16 +45,18 @@ public class NeuronInfoPanel : MonoBehaviour
     {
         if (infoPanel && infoPanel.gameObject.activeSelf)
         {
-            // Interpolate smoothActivity toward zero
-            float t = 1 / neuron.settings.infoPaneltextSpeed * Time.deltaTime;
-            smoothedVoltage = Mathf.Lerp(smoothedVoltage, 0, t);
-
-            //smoothedVoltage = Mathf.Lerp(targetVoltage, 0, speed * Time.deltaTime);
-            var text = smoothedVoltage.ToString("F01") +"v";
-            textComponent.text = text;            
+            // Interpolate smoothActivity toward target value
+            float t = 1.0f / neuron.settings.infoPanelTextSpeed * Time.deltaTime;
+            smoothedVoltage = Mathf.Lerp(smoothedVoltage, neuron.voltage, t);
+            
+            voltageText.text = smoothedVoltage.ToString("F01") + "v"; ; 
+            
+            // Used for testing position
             infoPanel.transform.position = neuron.transform.position + neuron.settings.infoPanelOffset;
         }
     }
+
+
     public void Toggle()
     {
         if (infoPanel && infoPanel.gameObject.activeSelf)
@@ -61,6 +68,8 @@ public class NeuronInfoPanel : MonoBehaviour
             Show();
         }
     }
+
+
     public void Show()
     {
         if (!infoPanel)
@@ -72,15 +81,21 @@ public class NeuronInfoPanel : MonoBehaviour
             infoPanel.SetActive(true);
         }
     }
+
+
     public void Hide()
     {
         infoPanel.SetActive(false);
     }
 
+
     private void SpawnPanel()
     {
         infoPanel = Instantiate(infoPanelPrefab);
+        infoPanel.transform.SetParent(this.transform);
+
         infoPanel.transform.position = transform.position + neuron.settings.infoPanelOffset;        
-        textComponent = infoPanel.GetComponentInChildren<TMPro.TMP_Text>();
+        voltageText = infoPanel.GetComponentInChildren<TMPro.TMP_Text>();
     }
+
 }

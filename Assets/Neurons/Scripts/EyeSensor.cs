@@ -71,7 +71,7 @@ public class EyeSensor : MonoBehaviour
             pixelBrightness[i] = brightness;
 
             neurons[i].GetComponent<Renderer>().material.color = pixel;
-            neurons[i].debug_voltage += brightness;
+            //neurons[i].debug_voltage += brightness;
             //if (brightness > 0.5f)
             //{
             //    excitatorySum += brightness;

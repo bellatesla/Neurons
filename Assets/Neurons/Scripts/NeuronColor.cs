@@ -36,7 +36,7 @@ public class NeuronColor : MonoBehaviour
         }
 
         // Interpolate smoothActivity toward zero
-        float t = 1 / settings.signalColorActivityDecayDuration * Time.deltaTime;
+        float t = 1.0f / (settings.signalColorActivityDecayDuration * Time.deltaTime);
         smoothActivity = Mathf.Lerp(smoothActivity, 0, t);
        
         
@@ -61,37 +61,58 @@ public class NeuronColor : MonoBehaviour
     {
         // not--Neuron can change to any color deppending on it's current activity voltage signalActivity;
         // currently Neuron cannnot change to any color deppending on it's current activity voltage signalActivity;
-        if (signal <= 0)
-        {            
-            if (neuron.neuronType == NeuronType.Inhibitory)
-            {
-                SetNegativeColors(-signal);
-            }
-            else
-            {
-                SetNegativeColors(-signal);
-                //SetPositiveColors(-signal);               
-            }  
-        }
-        if (signal >= 0)
-        {
-            //  Positive
-            if (neuron.neuronType == NeuronType.Inhibitory)
-            {
-                SetNegativeColors(signal);               
-            }
-            else
-            {
-                SetPositiveColors(signal);
-                //if (signal == 0)
-                //{
-                    
-                //}
-                //else SetNegativeColors(signal);
-            }
-        }
 
+        switch (neuron.neuronType)
+        {
+            case NeuronType.Excitory:
+                if (signal >= 0)
+                {
+                    SetPositiveColors(signal);
+                }
+                else SetNegativeColors(-signal);
+                break;
+            case NeuronType.Inhibitory:
+                if (signal <= 0)
+                {
+                    SetNegativeColors(-signal);                   
+                }
+                else SetPositiveColors(signal);
+                break;
+            default:
+                break;
+        }
         currentColor = material.color;
+        //if (signal < 0)
+        //{            
+        //    if (neuron.neuronType == NeuronType.Inhibitory)
+        //    {
+        //        SetNegativeColors(-signal);
+        //    }
+        //    else
+        //    {
+        //        SetNegativeColors(-signal);
+        //        //SetPositiveColors(-signal);               
+        //    }  
+        //}
+        //if (signal >= 0)
+        //{
+        //    //  Positive
+        //    if (neuron.neuronType == NeuronType.Inhibitory)
+        //    {
+        //        SetNegativeColors(signal);               
+        //    }
+        //    else
+        //    {
+        //        SetPositiveColors(signal);
+        //        //if (signal == 0)
+        //        //{
+
+        //        //}
+        //        //else SetNegativeColors(signal);
+        //    }
+        //}
+
+
     }
 
     private void SetPositiveColors(float value)

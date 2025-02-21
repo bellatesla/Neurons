@@ -5,20 +5,26 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NeuronSettings", menuName = "Neurons/Neuron Settings", order = 1)]
 public class NeuronSettingsSO : ScriptableObject
 {
-    // todo public NeuronSettings 
+    [Header("Neuron Logic")]
+    public bool inhibitoryFiresOnPositive;
+    public bool inhibitoryFiresOnNegative;
+
     [Header("Neuron Signal Settings")]
+    public float firedCooldownDuration = .1f;//use small value to supress firing after a fire
     public float signalSpeed = 1;//how fast the signal travels down the connections
     public float signalActivityDecayDuration = .1f;//how fast the signal decays in the neuron
     public float signalActivityIncreaseAmount = 0.1f;//how much the activity increases when a signal is received
     public float firingThresold = .7f;
+
+
     [Header("Neuron Connection Settings")]
     public float connectionStrengthenRate = 0.1f;
     public float connectionWeakenRate = 0.001f;
 
-    public float connectionStrengthMax = 1f;
-    public float connectionStrengthDefault = 0.5f;
+    public float connectionStrengthMax = 100f;
+    public float connectionStrengthDefault = 10f;
 
-    public float removeConnectionThreshold = 0.01f;
+    public float removeConnectionThreshold = 0.001f;//forgets over time if not fired
 
     [Header("Neuron Growth Settings")]
     public float connectionAddRadius = 1;
@@ -42,5 +48,5 @@ public class NeuronSettingsSO : ScriptableObject
     
     [Header("UI Panels")]
     public Vector3 infoPanelOffset;
-    internal int infoPaneltextSpeed=1;
+    public float infoPanelTextSpeed = 1;
 }

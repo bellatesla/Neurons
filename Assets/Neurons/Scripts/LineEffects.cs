@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.MemoryProfiler;
 using UnityEngine;
 
 [RequireComponent(typeof(Neuron))]
@@ -52,10 +53,10 @@ public class LineEffects : NeuronEffect
 
                     lineRenderer.startColor = connectionColor;
                     lineRenderer.endColor = connectionColor;
-                    //lineRenderer.material.SetColor("_EmissionColor", connectionColor * Mathf.GammaToLinearSpace(lineSettings.emission));
+                //lineRenderer.material.SetColor("_EmissionColor", connectionColor * Mathf.GammaToLinearSpace(lineSettings.emission));
                 //}
 
-                float strength = neuron.connectionStrengths.ContainsKey(connection) ? neuron.connectionStrengths[connection] : 0;
+                float strength = neuron.connections.strengths.ContainsKey(connection) ? neuron.connections.strengths[connection] : 0;
                 float width = Mathf.Clamp(strength, LineSettings().lineWidthMin, LineSettings().lineWidthMax) * LineSettings().lineWidthScale; ;
                 
                 lineRenderer.startWidth = width * LineSettings().lineStartWidth;

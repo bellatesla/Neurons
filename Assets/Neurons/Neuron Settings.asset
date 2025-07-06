@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Neuron Settings
   m_EditorClassIdentifier: 
   inhibitoryFiresOnPositive: 1
-  inhibitoryFiresOnNegative: 0
+  inhibitoryFiresOnNegative: 1
   firedCooldownDuration: 0.3
   signalSpeed: 1
   signalActivityDecayDuration: 1
@@ -25,7 +25,7 @@ MonoBehaviour:
   connectionStrengthDefault: 1
   removeConnectionThreshold: 0.05
   connectionAddRadius: 2
-  maxConnections: 1
+  maxConnections: 3
   neuronColors:
     PositiveColor: {r: 0.08505694, g: 0.9169811, b: 0.005190384, a: 1}
     NegativeColor: {r: 0.85490197, g: 0.110218406, b: 0.090196066, a: 1}

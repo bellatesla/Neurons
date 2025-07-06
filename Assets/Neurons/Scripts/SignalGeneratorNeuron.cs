@@ -98,10 +98,10 @@ public class SignalGeneratorNeuron : Neuron
         return null;
     }
 
-    protected override void DrawConnectionRadius()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, connectionAddRadius);
-        Gizmos.color = Color.white;
-    }
+    //protected override void DrawConnectionRadius()
+    //{
+    //    Gizmos.color = Color.green;
+    //    Gizmos.DrawWireSphere(transform.position, connectionAddRadius);
+    //    Gizmos.color = Color.white;
+    //}
 }

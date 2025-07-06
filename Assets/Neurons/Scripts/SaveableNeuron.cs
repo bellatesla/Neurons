@@ -76,7 +76,7 @@ public class SaveableNeuron : Saveable
     }
     public override void PostLoadState()
     {
-        neuron.connections = new List<Neuron>();
+        neuron.connections = new Connections();
 
         foreach (int conID in connectionIds)
         {

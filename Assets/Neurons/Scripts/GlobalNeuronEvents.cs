@@ -108,7 +108,7 @@ public class GlobalNeuronEvents : MonoBehaviour
     {
         foreach (Neuron neuron in neurons)
         {
-            neuron.connections = new List<Neuron>();
+            neuron.connections.Clear();
         }
     }
 }
